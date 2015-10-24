@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <title>ECE2019</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "reset", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
+  <title></title>
 </head>
 <body>
+<nav class="navigation-tab">
+  <ul>
+    <li><a href="/home" class="redirect">Home</a></li>
+    <li><a href="/courses" class="redirect">Courses</a></li>
+    <li><a href="/classmates" class="redirect">Classmates</a></li>
+    <li><a href="/information" class="redirect">Information</a></li>
+  </ul>
+</nav>
 
-<%= yield %>
+<div class="content-container">
+  <%= yield %>
+</div>
+
 
 </body>
 </html>

@@ -1,5 +1,10 @@
 ECE2019::Application.routes.draw do
-  #get 'welcome/index'
+  root :to =>  'navigation#home'
+  get '', :to => 'navigation#home'
+  get 'home', :to =>  'navigation#home'
+  get 'courses', :to =>  'navigation#courses'
+  get 'information', :to =>  'navigation#information'
+  get 'classmates', :to =>  'navigation#classmates'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -49,8 +54,10 @@ ECE2019::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-   root :to => 'welcome#index'
+  # root :to => 'welcome#index'
   #  root 'index#index'
+
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
