@@ -1,10 +1,9 @@
 ECE2019::Application.routes.draw do
-  root :to =>  'navigation#home'
-  get '', :to => 'navigation#home'
-  get 'home', :to =>  'navigation#home'
-  get 'courses', :to =>  'navigation#courses'
-  get 'information', :to =>  'navigation#information'
-  get 'classmates', :to =>  'navigation#classmates'
+  root :to =>  'home#home'
+  get 'home', :to =>  'home#home'
+  get 'courses', :to =>  'courses#courses'
+  get 'information', :to =>  'information#information'
+  get 'classmates', :to =>  'classmates#classmates'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

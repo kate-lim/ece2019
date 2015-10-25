@@ -53,9 +53,15 @@ body {
 }
 
 .content-container {
-    max-width: 90%;
-    height: auto;
-    font-family: "Roboto", sans-serif;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
     font-size: 1em;
-    margin-top: 1em;
+    font-family: "Roboto", sans-serif;
+}
+
+.content-container:after {
+    content: "";
+    display: table;
+    clear: both;
 }
