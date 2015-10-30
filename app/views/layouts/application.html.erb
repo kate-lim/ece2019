@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ECE 2019</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+	<body>
+	<nav class="navigation-tab">
+	  <ul>
+	    <a href="/home"><li>Home</li></a>
+	    <a href="/courses"><li>Courses</li></a>
+	    <a href="/classmates"><li>Classmates</li></a>
+	    <a href="/info"><li>Information</li></a>
+	  </ul>
+	</nav>
+
+	<div class="content-container">
+  		<%= yield %>
+	</div>
+
+	</body>
+</html>
+
