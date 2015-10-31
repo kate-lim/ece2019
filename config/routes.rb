@@ -1,5 +1,6 @@
 Ece2019::Application.routes.draw do
   root :to => 'main#index'
+  get '' => 'main#index'
   get '/home' => 'main#index'
   get '/courses' => 'courses#courses'
   get '/classmates' => 'classmates#classmates'

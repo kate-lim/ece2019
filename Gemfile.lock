@@ -40,6 +40,9 @@ GEM
     erubis (2.7.0)
     execjs (2.6.0)
     hike (1.2.3)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     journey (1.0.4)
     jquery-rails (3.1.4)
@@ -51,6 +54,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     polyglot (0.3.5)
     rack (1.4.7)
     rack-cache (1.5.1)
@@ -77,6 +81,7 @@ GEM
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    recursive-open-struct (0.6.5)
     sass (3.4.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -98,6 +103,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uwaterlooapi (0.1.1)
+      httparty
+      recursive-open-struct
 
 PLATFORMS
   ruby
@@ -111,6 +119,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  uwaterlooapi (~> 0.1.1)
 
 BUNDLED WITH
    1.10.6
