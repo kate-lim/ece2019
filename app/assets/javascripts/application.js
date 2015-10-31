@@ -16,6 +16,6 @@
 
 jQuery(document).ready(function($) {
     var urlArray = window.location.href.split('/');
-    var redirect = urlArray[urlArray.length - 1] == "" ? 'home' : urlArray[urlArray.length - 1];
+    var redirect = urlArray[urlArray.length - 1] == "" ? 'home' : urlArray[3];
     $('head title').html('ECE 2019 | ' + redirect.charAt(0).toUpperCase() + redirect.slice(1));
 });
