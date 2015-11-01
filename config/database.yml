@@ -36,9 +36,9 @@ production:
 #    database: ece2019_test
 #    pool: 5
 
-# production:
-#    adapter: postgresql
-#    encoding: unicode
-#    database: ece2019_production
-#    pool: 5
+production:
+   adapter: postgresql
+   encoding: unicode
+   database: ece2019_production
+   pool: 5
 
