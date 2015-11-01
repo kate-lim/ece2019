@@ -41,7 +41,6 @@ production:
    encoding: unicode
    database: dc45svkd71k474
    host: ec2-107-21-221-59.compute-1.amazonaws.com
-   pool: 5
    username: tpewclbfodrroe
    port: 5432
    password: KFGVLz_3ehjiE9nsFtqwor44_d
