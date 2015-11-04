@@ -1,24 +1,29 @@
+<h1>Classmates</h1>
 
-<h1>Listing classmates</h1>
+<div class="wrapper">
+    <div class="container">
+      <% data_length =  @classmates.length %>
+      <% count = 0 %>
+      <% perRow = 6.0 %>
+      <% for i in 1..(data_length/perRow).ceil %>
+        <div class="row">
+          <% @classmates[count*perRow.to_i..(i*perRow.to_i)-1].each do |cm| %>
+            <div class="col-xs-6 col-sm-2 profile">
+              <%= image_tag "rails.png" %>
+              <div class="name"><%= cm.name %></div>
+              <div class="github"><%= cm.githubProfile %></div>
+              <div class="website"><%= cm.website %></div>
+            </div>
+          <% end %>
+        </div>
+        <% count = i %>
+      <% end %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>GitHub Profile</th>
-    <th>Personal Website</th>
-  </tr>
-
-  <% @classmates.each do |classmate| %>
-    <tr>
-      <td><%= classmate.name %></td>
-      <td><%= classmate.githubProfile %></td>
-      <td><%= classmate.website %></td>
-    </tr>
-  <% end %>
-</table>
+    </div>
+</div>
 
 <%= link_to 'Add Classmate', new_classmate_path,
-			:style => "color: black;
-					  border: 1px solid black;
-					  background-color: rgba(0, 0, 0, 0.22);
-					  padding: 5px;" %>
+      :style => "color: black;
+            border: 1px solid black;
+            background-color: rgba(0, 0, 0, 0.22);
+            padding: 5px;" %>

@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
