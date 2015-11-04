@@ -24,18 +24,6 @@ production:
   pool: 5
   timeout: 5000
 
-# development:
-#    adapter: postgresql
-#    encoding: unicode
-#    database: ece2019_development
-#    pool: 5
-
-# test:
-#    adapter: postgresql
-#    encoding: unicode
-#    database: ece2019_test
-#    pool: 5
-
 production:
    adapter: postgresql
    encoding: unicode
@@ -44,6 +32,5 @@ production:
    username: tpewclbfodrroe
    port: 5432
    password: KFGVLz_3ehjiE9nsFtqwor44_d
-
 
 
