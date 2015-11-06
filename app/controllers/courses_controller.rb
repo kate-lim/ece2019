@@ -2,6 +2,7 @@ require 'uwaterlooapi'
 
 class CoursesController < ApplicationController
 	def courses
+		@showNav = true
 		api = UWaterlooAPI.new('7467c4874254fc4f0ee969d9edaaada3');
 		my_favorite_course = api.courses.subject('ECE').catalog_number(103)
 		@course_title = my_favorite_course.title

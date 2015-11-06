@@ -12,19 +12,24 @@
   <%= csrf_meta_tags %>
 </head>
 	<body>
-	<nav class="navigation-tab">
-	  <ul>
-	    <a href="/home"><li>Home</li></a>
-	    <a href="/courses"><li>Courses</li></a>
-	    <a href="/classmates"><li>Classmates</li></a>
-	    <a href="/info"><li>Information</li></a>
-	  </ul>
-	</nav>
+	<!-- Show nav bar only when we want it to -->
+	<!-- @showNav var is defined in the controller of current view -->
+	<% if @showNav %>
+		<nav class="navigation-tab">
+		  <ul>
+		    <a href="/home"><li>Home</li></a>
+		    <a href="/courses"><li>Courses</li></a>
+		    <a href="/classmates"><li>Classmates</li></a>
+		    <a href="/info"><li>Information</li></a>
+		  </ul>
+		</nav>
+	<% end %>
 
-	<div class="content-container">
-  		<%= yield %>
-	</div>
+	<!-- content from each view goes here -->
+  	<%= yield %>
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="js/libs/wow.min.js"></script>
 	</body>
 </html>
 
