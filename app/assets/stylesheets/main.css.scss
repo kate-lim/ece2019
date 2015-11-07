@@ -20,7 +20,7 @@ hr {
 
 /*Homepage Header and Blog Header*/
 .header{
-  font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Lato', sans-serif;
   color: black;
   display: table;
   position: relative;
@@ -39,17 +39,16 @@ hr {
 }
 
 .header p{
-    font-weight: 300;
-    margin-bottom: 25px;
+  font-weight: 400;
+  margin-bottom: 25px;
 }
 
 .header-button{
+  font-weight: 400;
   border-radius: 0;
   border-width: 2px;
-  // border-color: black;
   color: black;
-  background-color: #F8F8F8;
+  background-color: #F0F0F0;
   margin: 0px 5px;
   font-weight: 300;
-  // width: 100px;
 }
