@@ -55,3 +55,5 @@ gem 'uwaterlooapi', '~> 0.1.1'
 
 gem 'protected_attributes'
 gem 'puma'
+
+gem 'tzinfo-data'
