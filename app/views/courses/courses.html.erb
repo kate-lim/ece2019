@@ -1,6 +1,12 @@
 <h1>Courses</h1>
-<%= @course_title %>
 
-<div>courses <%= @courses %></div>
-
-boo <%= @boo %>
+<div class="wrapper">
+    <div class="container">
+      	<% data_length = @courses.length %>
+        <% @courses.each do |course| %>
+          	<div class="row">
+              <div>Term: <%= course["Term"]%> -- Course: <%= course["CourseCode"]%> - <%= course["CourseName"] %></div>
+            </div> 
+      	<% end %>
+    </div>
+</div>

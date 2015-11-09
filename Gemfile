@@ -50,10 +50,11 @@ end
 
 # To fix rendering issue on windows
 gem 'coffee-script-source', '1.8.0'
+gem 'tzinfo-data'
+
 
 gem 'uwaterlooapi', '~> 0.1.1'
 
 gem 'protected_attributes'
 gem 'puma'
 
-gem 'tzinfo-data'
