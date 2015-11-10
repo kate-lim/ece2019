@@ -21,11 +21,15 @@ ActiveRecord::Schema.define(version: 20151108032325) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "course_names", force: :cascade do |t|
-    t.string   "courseName"
-    t.string   "catalogNumber"
+  create_table "courses", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "number"
     t.string   "term"
     t.string   "major"
+    t.string   "title"
+    t.decimal  "units"
+    t.string   "description"
+
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
