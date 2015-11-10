@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20151108032325) do
 
   create_table "classmates", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.string   "githubProfile", limit: 255
-    t.string   "website",       limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name"
+    t.string   "githubProfile"
+    t.string   "website"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(version: 20151108032325) do
     t.string   "title"
     t.decimal  "units"
     t.string   "description"
-
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
