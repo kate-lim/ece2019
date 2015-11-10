@@ -27,10 +27,10 @@ production:
 production:
    adapter: postgresql
    encoding: unicode
-   database: dc45svkd71k474
-   host: ec2-107-21-221-59.compute-1.amazonaws.com
-   username: tpewclbfodrroe
+   database: d1tsrclmfnbka2
+   host: ec2-107-21-221-107.compute-1.amazonaws.com
+   username: namvpersqbhbye
    port: 5432
-   password: KFGVLz_3ehjiE9nsFtqwor44_d
+   password: SXdmy59RHaT_5rCF4B7MEuYLCm
 
 
