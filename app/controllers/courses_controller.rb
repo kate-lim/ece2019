@@ -19,7 +19,7 @@ class CoursesController < ApplicationController
 						   "CourseName" => api.courses.subject(course.courseName).catalog_number(course.catalogNumber).title,
 						   "Term" => course.term}
 			# Use this when testing
-			# course_info = {"CourseCode" => "ECE 103",
+			# course_info = {"CourseCode" => "ECE103",
 			# 			   "CourseName" => "Discrete Mathematics",
 			# 			   "Term" => "1B"}
 			
