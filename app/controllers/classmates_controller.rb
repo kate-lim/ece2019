@@ -2,7 +2,7 @@ class ClassmatesController < ApplicationController
   # GET /classmates
   # GET /classmates.json
   def index
-    @showNav = true
+    # @showNav = true
     @classmates = Classmate.all
   end
 
