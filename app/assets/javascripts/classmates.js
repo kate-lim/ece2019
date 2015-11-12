@@ -1,7 +1,6 @@
 $(function() {
   $("form.new_classmate").on("ajax:success", function(event, data, status, xhr) {
     $('#new-classmate-modal').modal('hide');
-    // console.log(data.name);
 
     new_data_html = "<div class='col-xs-6 col-sm-4 col-md-3 col-lg-2 profile'>" +
     					'<img src="/assets/rails.png" %>' +
