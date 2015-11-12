@@ -1,9 +1,5 @@
 <div class="wrapper">
   <div class="container">
-
-  </div>
-
-  <div class="container">
     <h1 class="title">Classmates</h1>
     <% @classmates.each do |person| %>
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 profile">
@@ -19,9 +15,45 @@
   </div>
 </div>
 
-<%= link_to 'Add Classmate', new_classmate_path,
+<a data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add Classmate</a>
+
+<div class="modal fade" id="new-classmate-modal" role="dialog" aria-labelledby="AddClassmate">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Someone new</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json} do |f| %>
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :github_Profile %>
+            <%= f.text_field :githubProfile %>
+          </div>
+          <div class="field">
+            <%= f.label :website %>
+            <%= f.text_field :website %>
+          </div>
+          <div class="actions">
+            <%= f.submit 'Save' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<!-- <%= link_to 'Add Classmate', new_classmate_path,
       :style => "color: black;
             border: 1px solid black;
             background-color: rgba(0, 0, 0, 0.22);
             padding: 5px;
-            text-align: center;" %>
+            text-align: center;" %> -->
