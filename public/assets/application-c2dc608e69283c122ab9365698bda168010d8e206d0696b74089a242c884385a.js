@@ -10864,19 +10864,7 @@ $(function() {
   $("form.new_classmate").on("ajax:success", function(event, data, status, xhr) {
     $('#new-classmate-modal').modal('hide');
 
-    var profile_img_src = "/assets/rails.png";
-    console.log(profile_img_src);
-
-    new_data_html = "<div class='col-xs-6 col-sm-4 col-md-3 col-lg-2 profile'>" +
-    					'<img src='+profile_img_src+'>' +
-    					'<div class="profile-content">' +
-          					'<div class="name">'+ data.name +'</div>'+
-          					'<a href="http://'+ data.githubProfile + '" target="_blank">' + data.githubProfile+'</a><br>' +
-          					'<a href="http://'+ data.website + '" target="_blank">' + data.website+'</a>'
-        				'</div>' +
-    				"</div>"
-
-    $('.wrapper .container').append(new_data_html);
+    window.location.reload();
   });
 });
 (function() {
