@@ -19,6 +19,7 @@ Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.c
 
 
 # Basic course information from http://ugradcalendar.uwaterloo.ca/page/ENG-Computer-Engineering-Electrical-Engineering
+Course.delete_all
 Course.create(subject: 'ECE', number: '100A', term: '1A')
 Course.create(subject: 'ECE', number: '105', term: '1A')
 Course.create(subject: 'ECE', number: '140', term: '1A')

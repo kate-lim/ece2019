@@ -6,11 +6,13 @@
         <%= image_tag "rails.png", :class => "img-responsive" %>
 
         <div class="profile-content">
-          <div class="name"><%= person.name %></div>
-          <i class="fa fa-github"></i>
-          <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %><br>
-          <i class="fa fa-link"></i>
-          <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
+          <div class="row"><div class="name"><%= person.name %></div></div>
+          <div class="row"><i class="fa fa-github"></i>
+            <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %>
+          </div>
+          <div class="row"><i class="fa fa-link"></i>
+            <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
+          </div>
         </div>
       </div>
     <% end %></div>
