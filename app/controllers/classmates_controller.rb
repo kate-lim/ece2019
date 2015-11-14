@@ -1,30 +1,29 @@
 class ClassmatesController < ApplicationController
-  # GET /classmates
-  # GET /classmates.json
   def index
-    @showNav = true
+    # @showNav = true
     @classmates = Classmate.all
   end
 
-  # GET /classmates/1
-  # GET /classmates/1.json
   def show
     @showNav = true
     @classmate = Classmate.find(params[:id])
   end
 
-  # GET /classmates/new
-  # GET /classmates/new.json
   def new
   end
 
-  # POST /classmates
-  # POST /classmates.json
   def create
     @showNav = true
     @classmate = Classmate.new(params[:classmate])
 
-    @classmate.save
-    redirect_to @classmate
+    respond_to do |format|
+      if @classmate.save
+        format.html { redirect_to @classmate, notice: 'classmate was successfully created.' }
+        format.json { render json: @classmate, status: :created, location: @classmate }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @classmate.errors, status: :unprocessable_entity }
+      end
+    end
   end
 end

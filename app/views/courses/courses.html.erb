@@ -2,10 +2,9 @@
 
 <div class="wrapper">
     <div class="container">
-      	<% data_length = @courses.length %>
         <% @courses.each do |course| %>
           	<div class="row">
-              <div>Term: <%= course["Term"]%> -- Course: <%= course["CourseCode"]%> - <%= course["CourseName"] %></div>
+              <div>Term: <%= course["Term"]%> -- Course: <%= course["CourseCodeDisplay"]%> - <%= course["CourseTitle"] %></div>
             </div> 
       	<% end %>
     </div>

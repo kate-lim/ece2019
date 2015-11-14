@@ -1,89 +1,90 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-
-Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'http://www.github.com', website: 'www.facebook.com')
+Classmate.delete_all
+Classmate.create(name: 'Bilal', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
 
 
 
 # Basic course information from http://ugradcalendar.uwaterloo.ca/page/ENG-Computer-Engineering-Electrical-Engineering
-CourseName.create!([
-	{courseName: 'ECE', 	catalogNumber: '100A', 	term: '1A'},
-	{courseName: 'ECE', 	catalogNumber: '105', 	term: '1A'},
-	{courseName: 'ECE', 	catalogNumber: '140', 	term: '1A'),
-	{courseName: 'ECE', 	catalogNumber: '150', 	term: '1A'),
-	{courseName: 'CHE', 	catalogNumber: '102', 	term: '1A'),
-	{courseName: 'MATH', 	catalogNumber: '117', 	term: '1A'),
+Course.delete_all
+Course.create!([
+	{subject: 'ECE', 	number: '100A', 	term: '1A'},
+	{subject: 'ECE', 	number: '105', 	term: '1A'},
+	{subject: 'ECE', 	number: '140', 	term: '1A'),
+	{subject: 'ECE', 	number: '150', 	term: '1A'),
+	{subject: 'CHE', 	number: '102', 	term: '1A'),
+	{subject: 'MATH', 	number: '117', 	term: '1A'),
 
-	{courseName: 'ECE', 	catalogNumber: '100B',	term: '1B'),
-	{courseName: 'ECE', 	catalogNumber: '103', 	term: '1B'),
-	{courseName: 'ECE', 	catalogNumber: '106', 	term: '1B'),
-	{courseName: 'ECE', 	catalogNumber: '124',	term: '1B'),
-	{courseName: 'ECE', 	catalogNumber: '155',	term: '1B'),
-	{courseName: 'MATH', 	catalogNumber: '119',	term: '1B'),
+	{subject: 'ECE', 	number: '100B',	term: '1B'),
+	{subject: 'ECE', 	number: '103', 	term: '1B'),
+	{subject: 'ECE', 	number: '106', 	term: '1B'),
+	{subject: 'ECE', 	number: '124',	term: '1B'),
+	{subject: 'ECE', 	number: '155',	term: '1B'),
+	{subject: 'MATH', 	number: '119',	term: '1B'),
 
-	{courseName: 'PD', 		catalogNumber: '20',	term: 'COOP 1'),
+	{subject: 'PD',		number: '20',	term: 'COOP 1'),
 
-	{courseName: 'ECE', 	catalogNumber: '200A',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '204A',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '205',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '222',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '240',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '250',	term: '2A'),
-	{courseName: 'ECE', 	catalogNumber: '290',	term: '2A'),
-	{courseName: 'MATH', 	catalogNumber: '215',	term: '2A'),
+	{subject: 'ECE', 	number: '200A',	term: '2A'),
+	{subject: 'ECE', 	number: '204A',	term: '2A'),
+	{subject: 'ECE', 	number: '205',	term: '2A'),
+	{subject: 'ECE', 	number: '222',	term: '2A'),
+	{subject: 'ECE', 	number: '240',	term: '2A'),
+	{subject: 'ECE', 	number: '250',	term: '2A'),
+	{subject: 'ECE', 	number: '290',	term: '2A'),
+	{subject: 'MATH', 	number: '215',	term: '2A'),
 
-	{courseName: 'PD', 		catalogNumber: '21',	term: 'COOP 2'),
+	{subject: 'PD',		number: '21',	term: 'COOP 2'),
 
-	{courseName: 'ECE', 	catalogNumber: '200B',	term: '2B'),
-	{courseName: 'ECE', 	catalogNumber: '207',	term: '2B'),
-	{courseName: 'ECE', 	catalogNumber: '242',	term: '2B'),
-	{courseName: 'ECE', 	catalogNumber: '254', 	term: '2B',		major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '224', 	term: '2B',		major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '209', 	term: '2B', 	major: 'EE'),
-	{courseName: 'ECE', 	catalogNumber: '204B', 	term: '2B', 	major: 'EE'),
-	{courseName: 'ECE', 	catalogNumber: '206', 	term: '2B', 	major: 'EE'),
+	{subject: 'ECE', 	number: '200B',	term: '2B'),
+	{subject: 'ECE', 	number: '207',	term: '2B'),
+	{subject: 'ECE', 	number: '242',	term: '2B'),
+	{subject: 'ECE', 	number: '254', 	term: '2B',		major: 'CE'),
+	{subject: 'ECE', 	number: '224', 	term: '2B',		major: 'CE'),
+	{subject: 'ECE', 	number: '209', 	term: '2B', 	major: 'EE'),
+	{subject: 'ECE', 	number: '204B',	term: '2B', 	major: 'EE'),
+	{subject: 'ECE', 	number: '206', 	term: '2B', 	major: 'EE'),
 
-	# {courseName: 'PD', catalogNumber: '21', term: 'COOP 3')
+	# {subject: 'PD', number: '21', term: 'COOP 3')
 
-	{courseName: 'ECE', 	catalogNumber: '300A', 	term: '3A'),
-	{courseName: 'ECE', 	catalogNumber: '316', 	term: '3A'),
-	{courseName: 'ECE', 	catalogNumber: '380', 	term: '3A'),
-	{courseName: 'ECE', 	catalogNumber: '327', 	term: '3A', 	major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '351', 	term: '3A', 	major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '331', 	term: '3A', 	major: 'EE'),
-	{courseName: 'ECE', 	catalogNumber: '351', 	term: '3A', 	major: 'EE'),
+	{subject: 'ECE', 	number: '300A',	term: '3A'),
+	{subject: 'ECE', 	number: '316', 	term: '3A'),
+	{subject: 'ECE', 	number: '380', 	term: '3A'),
+	{subject: 'ECE', 	number: '327', 	term: '3A', 	major: 'CE'),
+	{subject: 'ECE', 	number: '351', 	term: '3A', 	major: 'CE'),
+	{subject: 'ECE', 	number: '331', 	term: '3A', 	major: 'EE'),
+	{subject: 'ECE', 	number: '351', 	term: '3A', 	major: 'EE'),
 
-	# {courseName: 'PD', catalogNumber: '21', term: 'COOP 4')
+	# {subject: 'PD', number: '21', term: 'COOP 4')
 
-	{courseName: 'ECE', 	catalogNumber: '300B', 	term: '3B'),
-	{courseName: 'ECE', 	catalogNumber: '318', 	term: '3B'),
-	{courseName: 'ECE', 	catalogNumber: '390', 	term: '3B'),
-	{courseName: 'ECE', 	catalogNumber: '356', 	term: '3B',		major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '358', 	term: '3B',		major: 'CE'),
-	{courseName: 'ECE', 	catalogNumber: '224', 	term: '3B', 	major: 'EE'),
-	{courseName: 'ECE', 	catalogNumber: '361', 	term: '3B', 	major: 'EE'),
+	{subject: 'ECE', 	number: '300B', term: '3B'),
+	{subject: 'ECE', 	number: '318', 	term: '3B'),
+	{subject: 'ECE', 	number: '390', 	term: '3B'),
+	{subject: 'ECE', 	number: '356', 	term: '3B',		major: 'CE'),
+	{subject: 'ECE', 	number: '358', 	term: '3B',		major: 'CE'),
+	{subject: 'ECE', 	number: '224', 	term: '3B', 	major: 'EE'),
+	{subject: 'ECE', 	number: '361', 	term: '3B', 	major: 'EE'),
 
-	# {courseName: 'PD', catalogNumber: '21', term: 'COOP 5')
+	# {subject: 'PD', number: '21', term: 'COOP 5')
 
-	{courseName: 'ECE', 	catalogNumber: '400A', 	term: '4A'),
-	{courseName: 'ECE', 	catalogNumber: '498A', 	term: '4A'),
-	{courseName: 'GENE', 	catalogNumber: '403', 	term: '4A'),
+	{subject: 'ECE', 	number: '400A',	term: '4A'),
+	{subject: 'ECE', 	number: '498A',	term: '4A'),
+	{subject: 'GENE', 	number: '403', 	term: '4A'),
 
-	# {courseName: 'PD', catalogNumber: '21', term: 'COOP 6')
+	# {subject: 'PD', number: '21', term: 'COOP 6')
 
-	{courseName: 'ECE', 	catalogNumber: '400B', 	term: '4B'),
-	{courseName: 'ECE', 	catalogNumber: '498B', 	term: '4B'),
-	{courseName: 'GENE', 	catalogNumber: '404', 	term: '4B')
+	{subject: 'ECE', 	number: '400B',	term: '4B'),
+	{subject: 'ECE', 	number: '498B',	term: '4B'),
+	{subject: 'GENE', 	number: '404', 	term: '4B')
 ])
