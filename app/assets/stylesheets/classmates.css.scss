@@ -1,5 +1,4 @@
 .profile{
-	margin: 10px;
 	padding: 5px 10px;
 	color: #585858;
 
@@ -8,9 +7,12 @@
 		}
 
 	.profile-content{
-		padding: 5px 0 0 10px;
+		padding: 5px 0 5px 5px;
+
+		.name{padding: 2px;}
 
 		a{
+			padding: 2px;
 			color: #585858;
 			text-decoration: none;
 
@@ -27,4 +29,22 @@
   text-transform: uppercase;
   text-align: left;
   padding-left: 10px;
+}
+
+.modal{
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.form-special{
+	width: 50%;
+}
+
+.class-btn{
+	font-size: smaller;
+	border-radius: 0;
+	border-width: 2px;
+	color: black;
+	background-color: #F0F0F0;
+	margin: 0px 27px 10px 0;
 }

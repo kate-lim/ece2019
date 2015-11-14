@@ -1,59 +1,43 @@
 <div class="wrapper">
   <div class="container">
-    <h1 class="title">Classmates</h1>
-    <% @classmates.each do |person| %>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 profile">
-        <%= image_tag "rails.png" %>
+    <div class="row"><h1 class="title">Classmates</h1></div>
+    <div class="row"><% @classmates.each do |person| %>
+      <div class="col-md-2 col-sm-3 col-xs-4 profile">
+        <%= image_tag "rails.png", :class => "img-responsive" %>
 
         <div class="profile-content">
           <div class="name"><%= person.name %></div>
-          <%= link_to person.githubProfile, 'http://'+person.githubProfile, :target => '_blank' %>
+          <i class="fa fa-github"></i>
+          <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %><br>
+          <i class="fa fa-link"></i>
           <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
         </div>
       </div>
-    <% end %>
+    <% end %></div>
+    <div class="row">
+      <a class="class-btn hvr-bounce-to-top btn btn-lg pull-right" data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add Classmate</a>
+    </div>
   </div>
 </div>
-
-<a data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add Classmate</a>
 
 <div class="modal fade" id="new-classmate-modal" role="dialog" aria-labelledby="AddClassmate">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add Someone new</h4>
+        <h4 class="modal-title" id="myModalLabel">Add yourself to the page</h4>
       </div>
       <div class="modal-body">
-        <%= form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json} do |f| %>
-          <div class="field">
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-          </div>
-          <div class="field">
-            <%= f.label :github_Profile %>
-            <%= f.text_field :githubProfile %>
-          </div>
-          <div class="field">
-            <%= f.label :website %>
-            <%= f.text_field :website %>
-          </div>
-          <div class="actions">
-            <%= f.submit 'Save' %>
-          </div>
-        <% end %>
+      <%= simple_form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json}, defaults: { input_html: { class: 'form-special' } } do |f| %>
+        <%= f.input :name, label: 'Your name'%>
+        <%= f.input :githubProfile, label: 'GitHub Page' %>
+        <%= f.input :website, label: 'Personal Website' %>
+      </div>
+      <div class="modal-footer">
+        <%= f.button :submit, "Add", class: "pull-left" %>
+      <% end %>
+      </div>
       </div>
     </div>
   </div>
-
-
 </div>
-
-
-
-<!-- <%= link_to 'Add Classmate', new_classmate_path,
-      :style => "color: black;
-            border: 1px solid black;
-            background-color: rgba(0, 0, 0, 0.22);
-            padding: 5px;
-            text-align: center;" %> -->

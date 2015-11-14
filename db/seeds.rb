@@ -1,19 +1,20 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 Classmate.delete_all
-Classmate.create(name: 'Bilal', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bilal Majeed', githubProfile: 'bilalmajeed', website: 'bilalmajeed.com')
+Classmate.create(name: 'Kate Lim', githubProfile: 'kate-lim', website: 'kate-lim.github.io')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
 
 
 

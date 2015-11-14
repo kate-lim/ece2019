@@ -4,17 +4,19 @@ class ClassmatesController < ApplicationController
     @classmates = Classmate.all
   end
 
-  def show
-    @showNav = true
-    @classmate = Classmate.find(params[:id])
-  end
-
   def new
   end
 
   def create
     @showNav = true
     @classmate = Classmate.new(params[:classmate])
+
+    name = @classmate.name
+    github = @classmate.githubProfile
+    site = @classmate.website
+
+    @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
+    @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
 
     respond_to do |format|
       if @classmate.save
