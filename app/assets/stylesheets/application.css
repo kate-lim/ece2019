@@ -10,94 +10,52 @@
  *
  *= require_self
  *= require_tree .
+ *= require hover
  */
 
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    cursor: default;
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-       -khtml-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.navigation-tab {
-    width: 100%;
-    height: 15%;
-    top: 0;
-    border-bottom: solid 1px gray;
+.wrapper{
+  padding-top: 100px;
 }
 
-.navigation-tab li:hover {
-    font-weight: bold;
+.current-page{
+  background-color: #F0F0F0 !important;
+  box-shadow: 0px -4px 0 0px #2098d1 inset;
 }
 
-.navigation-tab li{
-    display: inline-block;
-    padding: 31px 10px;
-    margin: 0 0.5em;
-    font-size: 2em;
-    font-family: "Roboto", sans-serif;
-    cursor: pointer;
-    color: black;
+.nav-link:hover {
+  background-color: #F0F0F0 !important;
 }
 
-/*HOVER LIBRARY*/
-/* Bounce To Top */
-.hvr-bounce-to-top {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+.navbar {
+  padding: 20px 0;
+  -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
-.hvr-bounce-to-top:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #2098d1;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
-  color: white;
-}
-.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+
+.top-nav-collapse {
+  padding: 0;
+  /*bottom: 0;*/
 }

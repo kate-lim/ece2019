@@ -13,6 +13,7 @@
 
   <!-- google -->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -26,16 +27,26 @@
 
 	<!-- Show nav bar only when we want it to -->
 	<!-- @showNav var is defined in the controller of current view -->
-	<% if @showNav %>
-		<nav class="navigation-tab">
-		  <ul>
-		    <a href="/home"><li>Home</li></a>
-		    <a href="/courses"><li>Courses</li></a>
-		    <a href="/classmates"><li>Classmates</li></a>
-		    <a href="/info"><li>Information</li></a>
-		  </ul>
-		</nav>
-	<% end %>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container">
+
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/home">ECE_2019</a>
+	      </a>
+	    </div>
+
+	    <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
+	      <ul class="nav navbar-nav">
+          <li><a class="nav-link nav-courses hvr-underline-from-left" href="/courses">Courses</a></li>
+          <li><a class="nav-link nav-classmates hvr-underline-from-left" href="/classmates">Classmates</a></li>
+          <li><a class="nav-link nav-info hvr-underline-from-left" href="/info">Information</a></li>
+	      </ul>
+			</div>
+
+	  </div>
+	</nav>
+
 
 	<!-- content from each view goes here -->
   	<%= yield %>

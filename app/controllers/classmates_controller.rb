@@ -1,6 +1,6 @@
 class ClassmatesController < ApplicationController
   def index
-    # @showNav = true
+    @showNav = true
     @classmates = Classmate.all
   end
 

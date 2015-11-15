@@ -15,8 +15,20 @@
 //= require_tree .
 //= require rails.validations
 
-jQuery(document).ready(function($) {
-    var urlArray = window.location.href.split('/');
-    var redirect = urlArray[urlArray.length - 1] == "" ? 'home' : urlArray[3];
-    $('head title').html('ECE 2019 | ' + redirect.charAt(0).toUpperCase() + redirect.slice(1));
+var urlArray = window.location.href.split('/');
+var redirect = urlArray[urlArray.length - 1] == "" ? 'home' : urlArray[3];
+$('head title').html('ECE 2019 | ' + redirect.charAt(0).toUpperCase() + redirect.slice(1));
+
+//jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+	if ($(".navbar").offset().top > 50) {
+	  $(".navbar-fixed-top").addClass("top-nav-collapse");
+	} else {
+		$(".navbar-fixed-top").removeClass("top-nav-collapse");
+	}
+});
+
+$('document').ready(function(){
+	$('.nav-'+redirect).addClass('current-page');
+	$('.nav-'+redirect).removeClass('hvr-underline-from-left');
 });
