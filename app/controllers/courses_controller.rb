@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 	def courses
 		@showNav = true
 
-		@terms = Course.uniq.pluck(:term)
+		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
 
 		@courses = Array.new
 		
