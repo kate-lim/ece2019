@@ -1,30 +1,72 @@
 .profile{
-	margin: 10px;
 	padding: 5px 10px;
 	color: #585858;
 
-	img{
-			width: 150px;
-		}
+	img{width: 150px;}
 
 	.profile-content{
-		padding: 5px 0 0 10px;
+		color: #585858;
+		&:hover{color: black;}
+
+		padding: 5px 0 5px 20px;
+
+		.row .name, .row i, .row .name {padding: 2px;}
+
+		.row{
+			color: #585858;
+			&:hover{color: black;}
+		}
 
 		a{
 			color: #585858;
 			text-decoration: none;
-
-			&:hover{
-				color: black;
-			}
+			&:hover{color: black;}
 		}
 	}
 }
 
 .title{
   font-family: 'Lato', sans-serif;
-	font-weight: 300;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: left;
   padding-left: 10px;
+}
+
+.modal{
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-special{
+	width: 50%;
+}
+
+.class-btn{
+	font-size: smaller;
+	border-radius: 0;
+	border-width: 2px;
+	color: black;
+	background-color: #F0F0F0;
+	margin: 0px 27px 10px 0;
+}
+
+
+// ---- SPECIAL SIZING FOR DIFFERENT SIZES OF SCREENS
+
+//iphone 4 and 5
+@media only screen and (max-width: 325px) {
+   .row .name { font-size: 0.9em; }
+   .row i, .row a { font-size: 0.7em; }
+   .profile-content {padding-left: 15px !important;}
+}
+//iphone 6, 6+, nexus 4, 5, 6, s3, s4, s5
+@media only screen and (min-width: 325px) and (max-width: 450px){
+   .name { font-size: 1.1em; }
+   .row i, .row a { font-size: 0.85em; }
+   .profile-content {padding-left: 15px !important;}
+}
+//tablets, nexus 7,
+@media only screen and (min-width: 451px) and (max-width: 700px){
+   .name { font-size: 1.3em; }
+   .row i, .row a { font-size: 1em; }
 }

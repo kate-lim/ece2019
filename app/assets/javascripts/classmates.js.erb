@@ -1,0 +1,7 @@
+$(function() {
+  $("form.new_classmate").on("ajax:success", function(event, data, status, xhr) {
+    $('#new-classmate-modal').modal('hide');
+
+	window.location.reload();
+  });
+});

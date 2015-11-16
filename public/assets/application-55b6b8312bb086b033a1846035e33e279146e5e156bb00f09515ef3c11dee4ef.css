@@ -1,0 +1,219 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navigation-tab {
+    width: 100%;
+    height: 15%;
+    top: 0;
+    border-bottom: solid 1px gray;
+}
+
+.navigation-tab li:hover {
+    font-weight: bold;
+}
+
+.navigation-tab li{
+    display: inline-block;
+    padding: 31px 10px;
+    margin: 0 0.5em;
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    color: black;
+}
+
+/*HOVER LIBRARY*/
+/* Bounce To Top */
+.hvr-bounce-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098d1;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
+  color: white;
+}
+.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+/* line 1, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile {
+  padding: 5px 10px;
+  color: #585858;
+}
+/* line 5, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile img {
+  width: 150px;
+}
+/* line 9, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile .profile-content {
+  padding: 5px 0 5px 5px;
+}
+/* line 12, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile .profile-content .name {
+  padding: 2px;
+}
+/* line 14, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile .profile-content a {
+  padding: 2px;
+  color: #585858;
+  text-decoration: none;
+}
+/* line 19, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.profile .profile-content a:hover {
+  color: black;
+}
+
+/* line 26, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* line 34, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.modal {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 39, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.form-special {
+  width: 50%;
+}
+
+/* line 43, /Users/loaner/ece2019/app/assets/stylesheets/classmates.css.scss */
+.class-btn {
+  font-size: smaller;
+  border-radius: 0;
+  border-width: 2px;
+  color: black;
+  background-color: #F0F0F0;
+  margin: 0px 27px 10px 0;
+}
+/* line 1, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+hr {
+  width: 20%;
+  opacity: 0.5;
+}
+
+/* line 7, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.text-vertical-center {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 14, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.text-vertical-center h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 4.5em;
+  font-weight: 700;
+}
+
+/*Homepage Header and Blog Header*/
+/* line 22, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.header {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 36, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.header h1 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+/* line 41, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.header p {
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* line 46, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.button {
+  font-weight: 400;
+  border-radius: 0;
+  border-width: 2px;
+  color: black;
+  background-color: #F0F0F0;
+  margin: 0px 5px;
+  font-weight: 300;
+}

@@ -1,0 +1,18 @@
+jQuery(document).ready(function($) {
+  $('.course_cell').click(function(){
+  	var courseCode = $(this).text().trim();
+  	$.ajax({
+  		type: "POST",
+  		url: "/courses/detail",
+  		data: {'course_code': courseCode},
+  		dataType: "html",
+  		success: function (result) {
+  			$('#course-detail-modal').empty();
+  			$('#course-detail-modal').html(result);
+  		},
+  		error: function () {
+  			alert('Something went wrong :(');
+  		}
+  	});
+  });
+});

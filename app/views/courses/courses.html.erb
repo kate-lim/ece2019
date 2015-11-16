@@ -1,13 +1,21 @@
-<h1>Courses</h1>
-
 <div class="wrapper">
     <div class="container">
-        <% @courses.each do |course| %>
-          	<div class="row">
-              <div>Term: <%= course["Term"]%> -- Course: <%= course["CourseCodeDisplay"]%> - <%= course["CourseTitle"] %></div>
-            </div> 
-      	<% end %>
+    	<h1>CORE COURSES</h1>
+    	<table class="courses-table">
+    		<% @terms.each do |term_count| %>
+    		<tr>
+    			<td class="term_cell"><%= term_count %></td>
+		        <% @courses.each do |course| %>
+		        	<% if course["term"] == term_count %>
+			          	<td class="course_cell" data-toggle="modal" data-target="#course-detail-modal">
+			              <%= course["course_code"] %>
+			            </td> 
+			        <% end %>
+		      	<% end %>
+		    </tr>
+	      	<% end %>
+      	</table>
     </div>
 </div>
 
-<div id="course_popup"></div>
+<div class="modal fade" id="course-detail-modal" role="dialog" aria-labelledby="CourseDetail"></div>

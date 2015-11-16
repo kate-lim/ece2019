@@ -59,4 +59,5 @@ gem 'protected_attributes'
 gem 'puma'
 gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'simple_form'
 

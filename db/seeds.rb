@@ -1,19 +1,20 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 Classmate.delete_all
-Classmate.create(name: 'Bilal', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'www.github.com', website: 'www.facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'www.github.com', website: 'www.facebook.com')
+Classmate.create(name: 'Bilal Majeed', githubProfile: 'bilalmajeed', website: 'bilalmajeed.com')
+Classmate.create(name: 'Kate Lim', githubProfile: 'kate-lim', website: 'kate-lim.github.io')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
+Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
 
 
 
@@ -34,8 +35,6 @@ Course.create!([
 	{subject: 'ECE', 	number: '155',	term: '1B'),
 	{subject: 'MATH', 	number: '119',	term: '1B'),
 
-	{subject: 'PD',		number: '20',	term: 'COOP 1'),
-
 	{subject: 'ECE', 	number: '200A',	term: '2A'),
 	{subject: 'ECE', 	number: '204A',	term: '2A'),
 	{subject: 'ECE', 	number: '205',	term: '2A'),
@@ -44,8 +43,6 @@ Course.create!([
 	{subject: 'ECE', 	number: '250',	term: '2A'),
 	{subject: 'ECE', 	number: '290',	term: '2A'),
 	{subject: 'MATH', 	number: '215',	term: '2A'),
-
-	{subject: 'PD',		number: '21',	term: 'COOP 2'),
 
 	{subject: 'ECE', 	number: '200B',	term: '2B'),
 	{subject: 'ECE', 	number: '207',	term: '2B'),
@@ -56,8 +53,6 @@ Course.create!([
 	{subject: 'ECE', 	number: '204B',	term: '2B', 	major: 'EE'),
 	{subject: 'ECE', 	number: '206', 	term: '2B', 	major: 'EE'),
 
-	# {subject: 'PD', number: '21', term: 'COOP 3')
-
 	{subject: 'ECE', 	number: '300A',	term: '3A'),
 	{subject: 'ECE', 	number: '316', 	term: '3A'),
 	{subject: 'ECE', 	number: '380', 	term: '3A'),
@@ -65,8 +60,6 @@ Course.create!([
 	{subject: 'ECE', 	number: '351', 	term: '3A', 	major: 'CE'),
 	{subject: 'ECE', 	number: '331', 	term: '3A', 	major: 'EE'),
 	{subject: 'ECE', 	number: '351', 	term: '3A', 	major: 'EE'),
-
-	# {subject: 'PD', number: '21', term: 'COOP 4')
 
 	{subject: 'ECE', 	number: '300B', term: '3B'),
 	{subject: 'ECE', 	number: '318', 	term: '3B'),
@@ -76,13 +69,9 @@ Course.create!([
 	{subject: 'ECE', 	number: '224', 	term: '3B', 	major: 'EE'),
 	{subject: 'ECE', 	number: '361', 	term: '3B', 	major: 'EE'),
 
-	# {subject: 'PD', number: '21', term: 'COOP 5')
-
 	{subject: 'ECE', 	number: '400A',	term: '4A'),
 	{subject: 'ECE', 	number: '498A',	term: '4A'),
 	{subject: 'GENE', 	number: '403', 	term: '4A'),
-
-	# {subject: 'PD', number: '21', term: 'COOP 6')
 
 	{subject: 'ECE', 	number: '400B',	term: '4B'),
 	{subject: 'ECE', 	number: '498B',	term: '4B'),

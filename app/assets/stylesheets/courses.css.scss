@@ -1,0 +1,23 @@
+.courses-table {
+	font-size: 1.3em;
+	border-bottom: none;
+}
+
+.courses-table td{
+	padding: 0.5em 1em;
+}
+
+/*.courses-table tr{
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;	
+}*/
+
+.courses-table .term_cell {
+	padding-left: 0;
+	border-right: 1px solid black;
+	font-weight: bold;
+}
+
+.courses-table .course_cell:hover {
+	cursor: pointer;
+}

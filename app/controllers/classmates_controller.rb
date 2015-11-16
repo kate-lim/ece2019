@@ -1,12 +1,7 @@
 class ClassmatesController < ApplicationController
   def index
-    # @showNav = true
-    @classmates = Classmate.all
-  end
-
-  def show
     @showNav = true
-    @classmate = Classmate.find(params[:id])
+    @classmates = Classmate.all
   end
 
   def new
@@ -15,6 +10,13 @@ class ClassmatesController < ApplicationController
   def create
     @showNav = true
     @classmate = Classmate.new(params[:classmate])
+
+    name = @classmate.name
+    github = @classmate.githubProfile
+    site = @classmate.website
+
+    @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
+    @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
 
     respond_to do |format|
       if @classmate.save
