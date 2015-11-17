@@ -33,4 +33,5 @@ ActiveRecord::Schema.define(version: 20151108032325) do
     t.datetime "updated_at",  null: false
   end
 
+  
 end

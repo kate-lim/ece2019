@@ -9,7 +9,8 @@ class CoursesController < ApplicationController
 		Course.all.order(:id).each do |course|
 			course_info = {
 				"course_code" => course.subject + " " + course.number,
-				"term" => course.term
+				"term" => course.term,
+				"title" => course.title
 			}
 			@courses.push(course_info)
 		end
