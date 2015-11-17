@@ -4,12 +4,10 @@ class ClassmatesController < ApplicationController
     @classmates = Classmate.all
   end
 
-  def new
-  end
-
   def create
     @showNav = true
     @classmate = Classmate.new(params[:classmate])
+    @classmate.avatar = params[:file]
 
     name = @classmate.name
     github = @classmate.githubProfile
@@ -20,7 +18,7 @@ class ClassmatesController < ApplicationController
 
     respond_to do |format|
       if @classmate.save
-        format.html { redirect_to @classmate, notice: 'classmate was successfully created.' }
+        format.html { redirect_to action: "index"}
         format.json { render json: @classmate, status: :created, location: @classmate }
       else
         format.html { render action: "new" }

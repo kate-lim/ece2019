@@ -2,8 +2,15 @@
   <div class="container">
     <div class="row"><h1 class="title">Classmates</h1></div>
     <div class="row"><% @classmates.each do |person| %>
+      <% avatar_img = person.avatar.url %>
       <div class="col-md-2 col-sm-3 col-xs-4 profile">
-        <%= image_tag "rails.png", :class => "img-responsive" %>
+
+        <!-- use default pic for user if not avator found -->
+        <% if avatar_img.nil? %>
+          <%= image_tag "rails.png", :class => "img-responsive" %>
+        <% else %>
+          <%= image_tag avatar_img, :class => "img-responsive" %>
+        <% end %>
 
         <div class="profile-content">
           <div class="row"><div class="name"><%= person.name %></div></div>
@@ -34,6 +41,7 @@
         <%= f.input :name, label: 'Your name'%>
         <%= f.input :githubProfile, label: 'GitHub Page' %>
         <%= f.input :website, label: 'Personal Website' %>
+        <%= f.file_field :avatar %>
       </div>
       <div class="modal-footer">
         <%= f.button :submit, "Add", class: "pull-left" %>

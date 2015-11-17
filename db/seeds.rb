@@ -1,22 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 Classmate.delete_all
-Classmate.create(name: 'Bilal Majeed', githubProfile: 'bilalmajeed', website: 'bilalmajeed.com')
-Classmate.create(name: 'Kate Lim', githubProfile: 'kate-lim', website: 'kate-lim.github.io')
-Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Jim', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Bruce', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Selena', githubProfile: 'username', website: 'facebook.com')
-Classmate.create(name: 'Harvey', githubProfile: 'username', website: 'facebook.com')
-
-
 
 # Basic course information from http://ugradcalendar.uwaterloo.ca/page/ENG-Computer-Engineering-Electrical-Engineering
 Course.delete_all
