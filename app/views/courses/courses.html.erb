@@ -1,23 +1,40 @@
 <div class="wrapper">
     <div class="container">
-    	<h1>CORE COURSES</h1>
+    	<h1 id="courses-header">CE - CORE COURSES</h1>
+		<a id="toggle-courses" class="class-btn hvr-bounce-to-top btn btn-lg pull-right">EE Schedule</a>
     	<table class="courses-table">
     		<% @terms.each do |term_count| %>
     		<tr>
-    			<td class="term_cell"><%= term_count %></td>
+    			<td class="term-cell"><%= term_count %></td>
 		        <% @courses.each do |course| %>
 		        	<% if course["term"] == term_count %>
-			          	<td class="course_cell" data-toggle="modal" data-target="#course-detail-modal">
-			              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
-			              	<%= course["course_code"] %>
-			              </div>
-			            </td>
+		        		<% if course["major"] == "CE" %>
+				          	<td class="course-cell CE-course" data-toggle="modal" data-target="#course-detail-modal" >
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
+				            </td> 
+						<% elsif course["major"] == "EE" %>
+							<td class="course-cell EE-course" data-toggle="modal" data-target="#course-detail-modal" style="display:none;">
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
+				            </td> 
+				        <% else %>
+				        	<td class="course-cell" data-toggle="modal" data-target="#course-detail-modal" >
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
+				            </td> 
+				        <% end %>
 			        <% end %>
 		      	<% end %>
 		    </tr>
 	      	<% end %>
       	</table>
+      	<p>** Students can enrol in the sequence ECE 498A-498B, or the sequence GENE 403-404, in their 4A-4B terms. Combinations such as ECE 498A-GENE 404 are not allowed **</p>
     </div>
 </div>
+
 
 <div class="modal fade" id="course-detail-modal" role="dialog" aria-labelledby="CourseDetail"></div>
