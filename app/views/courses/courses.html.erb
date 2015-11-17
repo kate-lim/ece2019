@@ -10,15 +10,21 @@
 		        	<% if course["term"] == term_count %>
 		        		<% if course["major"] == "CE" %>
 				          	<td class="course-cell CE-course" data-toggle="modal" data-target="#course-detail-modal" >
-				              <%= course["course_code"] %>
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
 				            </td> 
 						<% elsif course["major"] == "EE" %>
 							<td class="course-cell EE-course" data-toggle="modal" data-target="#course-detail-modal" style="display:none;">
-				              <%= course["course_code"] %>
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
 				            </td> 
 				        <% else %>
 				        	<td class="course-cell" data-toggle="modal" data-target="#course-detail-modal" >
-				              <%= course["course_code"] %>
+				              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+				              	<%= course["course_code"] %>
+				              </div>
 				            </td> 
 				        <% end %>
 			        <% end %>
