@@ -11,5 +11,8 @@
       		<br>
 	    	<div class="course-detail-description"><%= course.description %></div>
 	    </div>
+	    <div class="modal-footer">
+	    	<%= link_to course.subject + " " + course.number + " @ UW Flow", 'https://uwflow.com/course/'+ course.subject.downcase +  course.number, :target => '_blank' %>
+      	</div>
     </div>
 </div>

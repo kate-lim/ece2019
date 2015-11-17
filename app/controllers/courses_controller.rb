@@ -6,11 +6,12 @@ class CoursesController < ApplicationController
 
 		@courses = Array.new
 		
-		Course.all.each do |course|
+		Course.all.order(:term, :major, :number).each do |course|
 			course_info = {
 				"course_code" => course.subject + " " + course.number,
 				"term" => course.term,
-				"title" => course.title
+				"title" => course.title,
+				"major" => course.major
 			}
 			@courses.push(course_info)
 		end

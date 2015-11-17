@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-  $('.course_cell').click(function(){
+  $('.course-cell').click(function(){
   	var courseCode = $(this).text().trim();
   	$.ajax({
   		type: "POST",
@@ -14,5 +14,19 @@ jQuery(document).ready(function($) {
   			alert('Something went wrong :(');
   		}
   	});
+  });
+
+  $('#toggle-courses').click(function(){
+    var major = $(this).text().split(' ')[0];
+    if(major == "EE") {
+      $('.CE-course').hide();
+      $('.EE-course').show();
+      $(this).text("CE Schedule");
+    } else {
+      $('.CE-course').show();
+      $('.EE-course').hide();
+      $(this).text("EE Schedule");
+    }
+    $('#courses-header').text(major + " - CORE COURSES");
   });
 });
