@@ -52,4 +52,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
       "#{@name}.#{file.extension}"
     end
   end
+
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
 end
