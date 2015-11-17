@@ -8,8 +8,10 @@
 		        <% @courses.each do |course| %>
 		        	<% if course["term"] == term_count %>
 			          	<td class="course_cell" data-toggle="modal" data-target="#course-detail-modal">
-			              <%= course["course_code"] %>
-			            </td> 
+			              <div data-toggle="tooltip" data-placement="bottom" title="<%=course["title"]%>">
+			              	<%= course["course_code"] %>
+			              </div>
+			            </td>
 			        <% end %>
 		      	<% end %>
 		    </tr>

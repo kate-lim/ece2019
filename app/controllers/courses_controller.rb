@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
 
 		@courses = Array.new
 		
-		Course.all.order(:id).each do |course|
+		Course.all.each do |course|
 			course_info = {
 				"course_code" => course.subject + " " + course.number,
 				"term" => course.term,
