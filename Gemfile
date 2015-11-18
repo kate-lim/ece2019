@@ -62,3 +62,4 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'simple_form'
 gem 'carrierwave'
 gem "mini_magick"
+gem 'carrierwave-dropbox'

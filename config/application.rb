@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'carrierwave'
+require 'carrierwave/dropbox'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -61,5 +62,13 @@ module Ece2019
     config.assets.version = '1.0'
 
     config.assets.precompile += ['rails.js']
+
+    config = YAML.load(File.read(Rails.root.join("config/settings.yml"))) || {}
+    config.merge! config.fetch(Rails.env, {})
+    config.each do |key, value|
+        ENV[key] = value.to_s unless value.is_a?(Hash)
+    end
   end
 end
+
+
