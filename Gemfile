@@ -65,3 +65,5 @@ gem "mini_magick"
 gem 'carrierwave-dropbox'
 gem 'rails_admin'
 gem 'rails_admin_toggleable'
+
+gem "figaro"
