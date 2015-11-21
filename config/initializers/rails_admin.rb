@@ -1,5 +1,13 @@
 RailsAdmin.config do |config|
 
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+      username == ENV["ADMIN_USER"] && password == ENV["ADMIN_PASS"]
+    end
+  end
+
+   config.main_app_name { ['ECE2019', 'Admin'] }
+
   ### Popular gems integration
 
   ## == Devise ==

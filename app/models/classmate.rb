@@ -4,11 +4,11 @@ class Classmate < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   rails_admin do
-	  list do
-	  	field :name
-	  	field :githubProfile
-	  	field :website
-	  	field :avatar
+		list do
+		  field :name
+		  field :githubProfile
+		  field :website
+		  field :avatar
   	  field :approved, :toggle
   	end
 	end
