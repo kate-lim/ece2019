@@ -8,7 +8,7 @@
 
         <!-- use default pic for user if not avator found -->
         <% if avatar_img.nil? %>
-          <%= image_tag "rails.png", :class => "img-responsive" %>
+          <%= image_tag "/avatar_default.png", :class => "img-responsive" %>
         <% else %>
           <%= image_tag avatar_img, :class => "img-responsive" %>
         <% end %>
