@@ -39,15 +39,6 @@ a {
   padding-top: 100px;
 }
 
-.current-page{
-  background-color: #F0F0F0 !important;
-  box-shadow: 0px -4px 0 0px #2098d1 inset;
-}
-
-.nav-link:hover {
-  background-color: #F0F0F0 !important;
-}
-
 .navbar {
   padding: 20px 0;
   -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -57,5 +48,13 @@ a {
 
 .top-nav-collapse {
   padding: 0;
-  /*bottom: 0;*/
+}
+
+.navbar-brand{
+  font-size: 25px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
 }

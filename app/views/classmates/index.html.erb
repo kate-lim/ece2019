@@ -1,6 +1,5 @@
 <div class="wrapper">
   <div class="container">
-    <div class="row"><h1 class="title">Classmates</h1></div>
     <div class="row"><% @classmates.each do |person| %>
       <% break if person.approved.to_s == "false" %>
       <% avatar_img = person.avatar.url %>

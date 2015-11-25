@@ -1,9 +1,9 @@
 class MainController < ApplicationController
 	def index
-		@showNav = false
 	end
 
 	def info
+		@navBarTitle = "Information"
 		@showNav = true
 	end
 

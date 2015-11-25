@@ -16,6 +16,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -26,6 +27,7 @@
 
 	<!-- Show nav bar only when we want it to -->
 	<!-- @showNav var is defined in the controller of current view -->
+	<% if @showNav %>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	  <div class="container">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,23 +38,42 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/home">ECE_2019</a>
+	      <a class="navbar-brand" href="#"><%= @navBarTitle %></a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="/courses">Courses</a></li>
-	        <li><a href="/classmates">Classmates</a></li>
-	        <li><a href="/info">Information</a></li>
+	        <li><a href="/home">Home</a></li>
+
+	        <% if @navBarTitle == 'Courses'%>
+	        	<li><a href="/classmates">Classmates</a></li>
+	        	<li><a href="/info">Information</a></li>
+	        <% elsif @navBarTitle == 'Classmates'%>
+	        	<li><a href="/courses">Courses</a></li>
+	        	<li><a href="/info">Information</a></li>
+	        <% elsif @navBarTitle == 'Information'%>
+	        	<li><a href="/courses">Courses</a></li>
+	        	<li><a href="/classmates">Classmates</a></li>
+	        <% end %>
 	      </ul>
 	    </div>
 	  </div>
 	</nav>
+	<% end %>
 
 
 	<!-- content from each view goes here -->
   	<%= yield %>
+<!--
+  	<% if @showFooter == true%>
+  	<% end %> -->
+
+  	<footer class="footer">
+      <div class="container">
+      	<p class="text-muted">Copyright &copy; 2015 &nbsp; All Rights Reserved</p>
+      </div>
+    </footer>
 
 	<!-- bootstrap js -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>

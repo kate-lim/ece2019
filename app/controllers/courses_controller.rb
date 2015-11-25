@@ -1,11 +1,11 @@
 class CoursesController < ApplicationController
 	def courses
 		@showNav = true
-
+		@navBarTitle = "Courses"
 		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
 
 		@courses = Array.new
-		
+
 		Course.all.order(:term, :major, :number).each do |course|
 			course_info = {
 				"course_code" => course.subject + " " + course.number,
