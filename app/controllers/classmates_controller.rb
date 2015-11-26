@@ -14,8 +14,13 @@ class ClassmatesController < ApplicationController
     github = @classmate.githubProfile
     site = @classmate.website
 
-    @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
-    @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
+    unless github.nil? || github == ''
+      @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
+    end
+
+    unless site.nil? || site == ''
+      @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
+    end
 
     respond_to do |format|
       if @classmate.save
