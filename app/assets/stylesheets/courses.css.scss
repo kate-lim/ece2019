@@ -1,23 +1,42 @@
-.courses-table {
-	font-size: 1.3em;
-	border-bottom: none;
+.title{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 25px;
 }
 
-.courses-table td{
-	padding: 0.5em 1em;
+.toggle-courses{
+	color: #797979;
+  font-size: 16px;
+  padding-left: 10px;
+	&:hover{color: black;}
 }
 
-/*.courses-table tr{
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;	
-}*/
+.table {
+	margin-top: 20px;
 
-.courses-table .term-cell {
-	padding-left: 0;
-	border-right: 1px solid black;
-	font-weight: bold;
+	tr {
+
+	}
+
+	td {
+		border-top: none !important;
+		padding-top: 20px !important;
+		padding-bottom: 20px !important;
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.current-term {
+		border-left: 1px red solid;
+		background-color: #F3F3F3;
+	}
 }
 
-.courses-table .course-cell:hover {
-	cursor: pointer;
+p {
+	color: #797979;
 }
