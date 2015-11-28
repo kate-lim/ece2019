@@ -11,7 +11,7 @@
 		  	<table class="table">
 		  		<% @terms.each do |term_count| %>
 			  		<% if term_count == '2A' %><tr class="current-term"><% else %><tr><% end %>
-			  			<td class="term-cell"><%= term_count %></td>
+			  			<td class="term-cell no-hover"><%= term_count %></td>
 				        <% @courses.each do |course| %>
 				        	<% if course["term"] == term_count %>
 				        		<% if course["major"] == "CE" %>

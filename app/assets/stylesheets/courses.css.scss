@@ -9,9 +9,12 @@
 
 .toggle-courses{
 	color: #797979;
-  font-size: 16px;
-  padding-left: 10px;
-	&:hover{color: black;}
+    font-size: 16px;
+    padding-left: 10px;
+	&:hover{
+		color: black;
+		cursor: pointer;
+	}
 }
 
 .table {
@@ -24,6 +27,7 @@
 
 		&:hover{
 			cursor: pointer;
+			font-weight: bold;
 		}
 	}
 
@@ -78,6 +82,7 @@ p {
 	cursor: pointer;
 }
 
-.no-hover {
-	cursor: context-menu;
+.no-hover:hover {
+	cursor: context-menu !important;
+	font-weight: normal !important;
 }
