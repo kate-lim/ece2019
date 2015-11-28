@@ -1,5 +1,4 @@
 jQuery(document).ready(function($) {
-
     $.ajax({
         type: "POST",
         url: "/courses/load_electives",
@@ -13,21 +12,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-<<<<<<< HEAD
-    $('.toggle-courses').click(function(){                  
-      var major = $(this).text().split(' ')[0];                 
-      if(major == "EE") {                   
-          $('.CE-course').hide();                   
-          $('.EE-course').show();                   
-          $('#courses-header').text("Electrical Engineering Core Courses");                    
-          $(this).text("CE Schedule");                  
-      } else {                  
-          $('.CE-course').show();                   
-          $('.EE-course').hide();                   
-          $('#courses-header').text("Computer Engineering Core Courses");                      
-          $(this).text("EE Schedule");                  
-      }                 
-=======
     $('.toggle-courses').click(function(){
       var major = $(this).text().split(' ')[0];
       if(major == "EE") {
@@ -41,7 +25,6 @@ jQuery(document).ready(function($) {
           $('#courses-header').text("Computer Engineering Core Courses");
           $(this).text("EE Schedule");
       }
->>>>>>> ba6ecb8d9e476fdd63c66c05a3028386ed5ee576
     });
 });
 

@@ -86,3 +86,11 @@ p {
 	cursor: context-menu !important;
 	font-weight: normal !important;
 }
+
+.elective-cell {
+	width: 12%;
+	&:hover {
+		cursor: pointer;
+		font-weight: bold;
+	}
+}
