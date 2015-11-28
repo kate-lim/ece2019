@@ -36,7 +36,7 @@ a {
 }
 
 .wrapper{
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 .navbar {
@@ -61,4 +61,8 @@ a {
 
 .footer a {
   color: inherit;
+}
+
+.modal {
+  font-family: 'Lato', sans-serif !important;
 }

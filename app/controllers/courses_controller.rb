@@ -1,11 +1,12 @@
 class CoursesController < ApplicationController
 	def courses
 		@showNav = true
-		@navBarTitle = "Courses"
+		@pageName = "Courses"
+		@navBarTitle = "ECE Courses"
 		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
 
 		@courses = Array.new
-		
+
 		Course.all.order(:term, :number, :major).each do |course|
 			course_info = {
 				"course_code" 	=> course.subject == 'Elective' ? course.subject : course.subject + " " + course.number,
@@ -49,10 +50,10 @@ class CoursesController < ApplicationController
 
 	def detail_elective
 		course_code = params[:course_code].split(' ')
-	
+
 		selected = Elective.where(:subject => course_code[0], :number => course_code[1]).first
 		display_code = ((selected.subject + " " + selected.number) if selected.number != "*") || (selected.subject)
-		
+
 		if(selected.elective_type == "NSE" && selected.list == "1" && selected.lab == true)
 			display_code = display_code + "/" + display_code + "L"
 		end

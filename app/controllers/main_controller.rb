@@ -4,6 +4,7 @@ class MainController < ApplicationController
 
 	def info
 		@navBarTitle = "Information"
+		@pageName = "Information"
 		@showNav = true
 	end
 

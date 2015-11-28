@@ -1,19 +1,23 @@
-.title{
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
+@import "bootstrap";
+
+.courses-header {
+	@extend .h3;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
   text-align: left;
   padding-left: 10px;
-  font-size: 25px;
-}
 
-.toggle-courses{
-	color: #797979;
-    font-size: 16px;
-    padding-left: 10px;
-	&:hover{
-		color: black;
-		cursor: pointer;
+	.toggle-courses{
+		font-size: 85%;
+		font-weight: 300;
+		padding-left: 10px;
+		color: #797979;
+
+		&:hover{
+			color: black;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -21,14 +25,12 @@
 	margin-top: 20px;
 
 	td {
+		color: #797979;
 		border-top: none !important;
 		padding-top: 20px !important;
 		padding-bottom: 20px !important;
 
-		&:hover{
-			cursor: pointer;
-			font-weight: bold;
-		}
+		&:hover{ cursor: pointer; color: black;}
 	}
 
 	.current-term {
@@ -41,21 +43,8 @@ p {
 	color: #797979;
 }
 
-.courses-table .course-cell{
-	padding: 0.5em 1em;
+.modal-dialog{
 }
-
-.courses-table .term-cell {
-	padding-left: 0;
-	padding-right: 1em;
-	border-right: 1px solid black;
-	font-weight: bold;
-}
-
-.courses-table .course-cell:hover {
-	cursor: pointer;
-}
-
 
 .elective-type h1, .elective-type h3, .elective-type h4 {
 	padding-top: 5px;
@@ -64,10 +53,6 @@ p {
 
 .elective-type h5 {
 	padding-top: 2px;
-}
-
-.course-detail-title {
-	font-weight: bold;
 }
 
 .elective-sub-category, .list-of-electives {

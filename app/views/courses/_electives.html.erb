@@ -8,9 +8,9 @@
 				<% @cse_electives.each do |elective| %>
 					<% if elective["list"] == "A" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				            <%= elective["code"] %>
-			            </div>
-			        <% end %>
+	            <%= elective["code"] %>
+            </div>
+	        <% end %>
 				<% end %>
 			</div>
 		</div>
@@ -22,9 +22,9 @@
 					<% @cse_electives.each do |elective| %>
 						<% if elective["list"] == "C-1" %>
 							<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-					            <%= elective["code"] %>
-				            </div>
-				        <% end %>
+		            <%= elective["code"] %>
+	            </div>
+		        <% end %>
 					<% end %>
 				</div>
 			</div>
@@ -34,11 +34,11 @@
 					<% @cse_electives.each do |elective| %>
 						<% if elective["list"] == "C-2" %>
 							<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-					            <%= elective["code"] %>
-				            </div>
-				        <% end %>
+		            <%= elective["code"] %>
+	            </div>
+		        <% end %>
 					<% end %>
-				</div>		
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-12">
@@ -47,9 +47,9 @@
 				<% @cse_electives.each do |elective| %>
 					<% if elective["list"] == "D" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				            <%= elective["code"] %>
-			            </div>
-			        <% end %>
+	            <%= elective["code"] %>
+            </div>
+	        <% end %>
 				<% end %>
 			</div>
 		</div>
@@ -66,9 +66,9 @@
 				<% @nse_electives.each do |elective| %>
 					<% if elective["list"] == "1" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div> 
-				    <% end %>
+	          	<%= elective["code"] %>
+		        </div>
+			    <% end %>
 				<% end %>
 			</div>
 		</div>
@@ -78,9 +78,9 @@
 				<% @nse_electives.each do |elective| %>
 					<% if elective["list"] == "2" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div> 
-				    <% end %>
+	          	<%= elective["code"] %>
+		        </div>
+			    <% end %>
 				<% end %>
 			</div>
 		</div>
@@ -97,8 +97,8 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "4A" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div>
+	          	<%= elective["code"] %>
+		        </div>
 					<% end %>
 				<% end %>
 			</div>
@@ -109,8 +109,8 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "4B" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div>
+	          	<%= elective["code"] %>
+		        </div>
 					<% end %>
 				<% end %>
 			</div>
@@ -121,8 +121,8 @@
 				<% @te_electives.each do |elective| %>
 					<% if !elective["list"] %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div>
+	          	<%= elective["code"] %>
+		        </div>
 					<% end %>
 				<% end %>
 			</div>
@@ -133,8 +133,8 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "CE" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div>
+	          	<%= elective["code"] %>
+		        </div>
 					<% end %>
 				<% end %>
 			</div>
@@ -145,8 +145,8 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "EE" %>
 						<div class="elective-cell col-sm-1" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>" value="<%=elective["code"]%>" onclick="loadDetailsPopup(this, false)">
-				          	<%= elective["code"] %>
-				        </div>
+							<%= elective["code"] %>
+				  	</div>
 					<% end %>
 				<% end %>
 			</div>

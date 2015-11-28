@@ -1,20 +1,21 @@
 <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-            <h4 class="modal-title" id="myModalLabel"><%= @selected_course.subject %> <%= @selected_course.number %></h4>
-            <div class="course-detail-term">Term: <%= @selected_course.term %> | Credit: <%= @selected_course.units %></div>
-        </div>
-
-    	<div class="modal-body">
-    		<div class="course-detail-title"><%= @selected_course.title %></div>
-    		<br>
-            <div class="course-detail-description"><%= @selected_course.description %></div>
-        </div>
-
-        <div class="modal-footer">
-        	<%= link_to @selected_course.subject + " " + @selected_course.number + " @ UW Flow", 'https://uwflow.com/course/'+ @selected_course.subject.downcase +  @selected_course.number, :target => '_blank' %>
-        </div>
-
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="modal-title" id="myModalLabel"><%= @selected_course.subject %> <%= @selected_course.number %></h3>
+      <p>Term: <%= @selected_course.term %> | Credit: <%= @selected_course.units %></p>
     </div>
+
+    <div class="modal-body">
+      <h4><%= @selected_course.title %></h4>
+      <p><%= @selected_course.description %></p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= link_to @selected_course.subject + " " + @selected_course.number + " @ UW Flow", 'https://uwflow.com/course/'+ @selected_course.subject.downcase +  @selected_course.number,
+          :target => '_blank',
+          :class => 'btn btn-info ' %>
+    </div>
+  </div>
 </div>

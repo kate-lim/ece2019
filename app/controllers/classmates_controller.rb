@@ -1,6 +1,7 @@
 class ClassmatesController < ApplicationController
   def index
     @navBarTitle = "Classmates"
+    @pageName = "Classmates"
     @showNav = true
     @classmates = Classmate.all
   end
