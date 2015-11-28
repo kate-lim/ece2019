@@ -3,21 +3,59 @@
 	border-bottom: none;
 }
 
-.courses-table td{
+.courses-table .course-cell{
 	padding: 0.5em 1em;
 }
 
-/*.courses-table tr{
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;	
-}*/
-
 .courses-table .term-cell {
 	padding-left: 0;
+	padding-right: 1em;
 	border-right: 1px solid black;
 	font-weight: bold;
 }
 
 .courses-table .course-cell:hover {
 	cursor: pointer;
+}
+
+.elective-cell {
+	width: 10% !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+
+.elective-cell:hover {
+	cursor: pointer;
+}
+
+.elective-type h1, .elective-type h3, .elective-type h4 {
+	padding-top: 5px;
+	padding-bottom: 0;
+}
+
+.elective-type h5 {
+	padding-top: 2px;
+}
+
+.course-detail-title {
+	font-weight: bold;
+}
+
+.col-sm-12 {
+	padding: 0 !important;
+}
+
+.elective-sub-category, .list-of-electives {
+	padding-left: 1em !important;
+}
+
+.toggle-elective {
+	padding-right: 0.3em;
+}
+
+.toggle-elective:hover {
+	cursor: pointer;
+}
+.no-hover {
+	cursor: context-menu;
 }

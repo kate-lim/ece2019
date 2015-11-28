@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  subject: MyString
+  number: 
+  lab: false
+  title: MyString
+  units: 9.99
+  description: MyString
+
+two:
+  type: 
+  subject: MyString
+  number: 
+  lab: false
+  title: MyString
+  units: 9.99
+  description: MyString
