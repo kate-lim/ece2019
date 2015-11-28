@@ -57,7 +57,14 @@ gem 'uwaterlooapi', '~> 0.1.1'
 
 gem 'protected_attributes'
 gem 'puma'
-gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'simple_form'
+gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
+gem 'carrierwave'
+gem "mini_magick"
+gem 'carrierwave-dropbox'
+gem 'rails_admin'
+gem 'rails_admin_toggleable'
 
+gem 'figaro'
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'

@@ -1,6 +1,44 @@
-.courses-table {
-	font-size: 1.3em;
-	border-bottom: none;
+.title{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.toggle-courses{
+	color: #797979;
+  font-size: 16px;
+  padding-left: 10px;
+	&:hover{color: black;}
+}
+
+.table {
+	margin-top: 20px;
+
+	tr {
+
+	}
+
+	td {
+		border-top: none !important;
+		padding-top: 20px !important;
+		padding-bottom: 20px !important;
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.current-term {
+		border-left: 1px red solid;
+		background-color: #F3F3F3;
+	}
+}
+
+p {
+	color: #797979;
 }
 
 .courses-table .course-cell{
@@ -56,6 +94,7 @@
 .toggle-elective:hover {
 	cursor: pointer;
 }
+
 .no-hover {
 	cursor: context-menu;
 }

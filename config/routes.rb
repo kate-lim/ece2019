@@ -1,4 +1,5 @@
 Ece2019::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :classmates
 
   root to: 'main#index'

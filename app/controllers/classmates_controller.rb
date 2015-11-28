@@ -1,26 +1,30 @@
 class ClassmatesController < ApplicationController
   def index
+    @navBarTitle = "Classmates"
     @showNav = true
     @classmates = Classmate.all
-  end
-
-  def new
   end
 
   def create
     @showNav = true
     @classmate = Classmate.new(params[:classmate])
+    @classmate.avatar = params[:file]
 
     name = @classmate.name
     github = @classmate.githubProfile
     site = @classmate.website
 
-    @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
-    @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
+    unless github.nil? || github == ''
+      @classmate.githubProfile = ((github.split('//')[-1]).split('www.')[-1]).split('/')[-1]
+    end
+
+    unless site.nil? || site == ''
+      @classmate.website = ((site.split('//')[-1]).split('www.')[-1])
+    end
 
     respond_to do |format|
       if @classmate.save
-        format.html { redirect_to @classmate, notice: 'classmate was successfully created.' }
+        format.html { redirect_to action: "index"}
         format.json { render json: @classmate, status: :created, location: @classmate }
       else
         format.html { render action: "new" }

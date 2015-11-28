@@ -1,5 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+
 Classmate.delete_all
 Classmate.create(name: 'Bilal Majeed', 	githubProfile: 'bilalmajeed', 	website: 'bilalmajeed.com')
 Classmate.create(name: 'Kate Lim', 		githubProfile: 'kate-lim', 		website: 'kate-lim.github.io')
@@ -97,12 +98,6 @@ Elective.create!([
 	{elective_type: 'CSE',	list: 'A',		subject: 'STV',		number: '404'},
 	{elective_type: 'CSE',	list: 'A',		subject: 'SYDE',	number: '261'},
 	{elective_type: 'CSE',	list: 'A',		subject: 'WS',		number: '205'},
-	
-	# {elective_type: 'CSE',	list: 'B',		subject: 'CIVE',	number: '392'},
-	# {elective_type: 'CSE',	list: 'B',		subject: 'ECE',		number: '390'},
-	# {elective_type: 'CSE',	list: 'B',		subject: 'GENE',	number: '22B'},
-	# {elective_type: 'CSE',	list: 'B',		subject: 'MSCI',	number: '261'},
-	# {elective_type: 'CSE',	list: 'B',		subject: 'SYDE',	number: '262'},
 
 	{elective_type: 'CSE',	list: 'C-1',	subject: 'ECON',	number: '102'},
 	{elective_type: 'CSE',	list: 'C-1',	subject: 'ECON',	number: '202'},

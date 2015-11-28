@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117041407) do
+ActiveRecord::Schema.define(version: 20151119042840) do
 
   create_table "classmates", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.string   "githubProfile",         limit: 255
-    t.string   "website",               limit: 255
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "name",          limit: 255
+    t.string   "githubProfile", limit: 255
+    t.string   "website",       limit: 255
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "avatar"
+    t.boolean  "approved",                  default: false, null: false
   end
-  
+
+  add_index "classmates", ["approved"], name: "index_classmates_on_approved"
+
   create_table "courses", force: :cascade do |t|
     t.string   "subject"
     t.string   "number"
@@ -43,8 +47,8 @@ ActiveRecord::Schema.define(version: 20151117041407) do
     t.string   "title"
     t.decimal  "units"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

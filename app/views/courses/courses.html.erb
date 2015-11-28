@@ -1,40 +1,47 @@
 <div class="wrapper">
-  	<div class="container">
-  	<a id="toggle-courses" class="class-btn hvr-bounce-to-top btn btn-lg pull-right">EE Schedule</a>
-  	<h2 id="courses-header">Computer Engineering Core Courses</h2>
-	  	<table class="courses-table">
-	  		<% @terms.each do |term_count| %>
-		  		<tr>
-		  			<td class="term-cell"><%= term_count %></td>
-			        <% @courses.each do |course| %>
-			        	<% if course["term"] == term_count %>
-			        		<% if course["major"] == "CE" %>
-					          	<td class="course-cell CE-course" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"] %>">
-				              		<%= course["course_code"] %>
-					            </td>
-							<% elsif course["major"] == "EE" %>
-								<td class="course-cell EE-course" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"] %>">
-			              			<%= course["course_code"] %>
-				            	</td>
-					        <% else %>
-					        	<% if course["course_code"] == 'Elective' %>
-						        	<td class="course-cell no-hover" title="<%=course["title"]%>"><%= course["course_code"] %></td>
-						        <% else %>   
-						        	<td class="course-cell" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"]%>">
-						            	<%= course["course_code"] %>
-									</td>
+	<div class="container">
+	  	<div class="row">
+			<div class="courses-header">
+				<span class="title">Computer Engineering Core Courses</span>
+				<span class="toggle-courses">EE Schedule</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+		  	<table class="courses-table">
+		  		<% @terms.each do |term_count| %>
+			  		<tr>
+			  			<td class="term-cell"><%= term_count %></td>
+				        <% @courses.each do |course| %>
+				        	<% if course["term"] == term_count %>
+				        		<% if course["major"] == "CE" %>
+						          	<td class="course-cell CE-course" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"] %>">
+					              		<%= course["course_code"] %>
+						            </td>
+								<% elsif course["major"] == "EE" %>
+									<td class="course-cell EE-course" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"] %>">
+				              			<%= course["course_code"] %>
+					            	</td>
+						        <% else %>
+						        	<% if course["course_code"] == 'Elective' %>
+							        	<td class="course-cell no-hover" title="<%=course["title"]%>"><%= course["course_code"] %></td>
+							        <% else %>   
+							        	<td class="course-cell" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" onclick="loadDetailsPopup(this, true)" value="<%=course["course_code"]%>">
+							            	<%= course["course_code"] %>
+										</td>
+							        <% end %>
 						        <% end %>
 					        <% end %>
-				        <% end %>
-			      	<% end %>
-			    </tr>
-	      	<% end %>
-	    </table>
-    <p>** Students can enroll in the sequence ECE 498A-498B, or the sequence GENE 403-404, in their 4A-4B terms. Combinations such as ECE 498A-GENE 404 are not allowed **</p>
-    <br />
-    <div id="electives"></div>
+				      	<% end %>
+				    </tr>
+		      	<% end %>
+		    </table>
+		    </div>
+		</div>
+	    <p><strong>Note: </strong>Students can enrol in the sequence ECE 498A-498B, or the sequence GENE 403-404, in their 4A-4B terms. Combinations such as ECE 498A-GENE 404 are not allowed</p>
+	    <br />
+	    <div id="electives"></div>
   	</div>
 </div>
-
 
 <div class="modal fade" id="course-detail-modal" role="dialog" aria-labelledby="CourseDetail"></div>

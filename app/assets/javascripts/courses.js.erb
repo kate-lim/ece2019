@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
     $.ajax({
         type: "POST",
         url: "/courses/load_electives",
@@ -12,25 +13,19 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // $('.toggle-elective').click(function(){
-    //     alert('sdf');
-    //     var id = $(this).attr('value');
-    //     $('#' + id).show();
-    // });
-
-    $('#toggle-courses').click(function(){
-      var major = $(this).text().split(' ')[0];
-      if(major == "EE") {
-          $('.CE-course').hide();
-          $('.EE-course').show();
-          $('#courses-header').text("Electrical Engineering Core Courses");
-          $(this).text("CE Schedule");
-      } else {
-          $('.CE-course').show();
-          $('.EE-course').hide();
-          $('#courses-header').text("Computer Engineering Core Courses");
-          $(this).text("EE Schedule");
-      }
+    $('#toggle-courses').click(function(){                  
+      var major = $(this).text().split(' ')[0];                 
+      if(major == "EE") {                   
+          $('.CE-course').hide();                   
+          $('.EE-course').show();                   
+          $('#courses-header').text("Electrical Engineering Core Courses");                    
+          $(this).text("CE Schedule");                  
+      } else {                  
+          $('.CE-course').show();                   
+          $('.EE-course').hide();                   
+          $('#courses-header').text("Computer Engineering Core Courses");                      
+          $(this).text("EE Schedule");                  
+      }                 
     });
 });
 
@@ -67,3 +62,36 @@ function loadDetailsPopup(data, isCourse) {
     }
 
 }
+// =======
+//   $('td').click(function(){
+//   	var courseCode = $(this).text().trim();
+//   	$.ajax({
+//   		type: "POST",
+//   		url: "/courses/detail",
+//   		data: {'course_code': courseCode},
+//   		dataType: "html",
+//   		success: function (result) {
+//   			$('#course-detail-modal').empty();
+//   			$('#course-detail-modal').html(result);
+//   		},
+//   		error: function () {
+//   			alert('Something went wrong :(');
+//   		}
+//   	});
+//   });
+
+//   $('.toggle-courses').click(function(){
+//     var major = $(this).text().split(' ')[0];
+//     if(major == "EE") {
+//       $('.CE-course').hide();
+//       $('.EE-course').show();
+//       $(this).text("CE Schedule");
+//     } else {
+//       $('.CE-course').show();
+//       $('.EE-course').hide();
+//       $(this).text("EE Schedule");
+//     }
+//     $('.title').html(major + ' - CORE COURSES');
+//   });
+// });
+// >>>>>>> f46ac5a23683e8e31e9eb9e5fca5eb3001c01ca7

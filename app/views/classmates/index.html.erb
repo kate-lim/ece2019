@@ -1,24 +1,35 @@
 <div class="wrapper">
   <div class="container">
-    <div class="row"><h1 class="title">Classmates</h1></div>
     <div class="row"><% @classmates.each do |person| %>
+      <% break if person.approved.to_s == "false" %>
+      <% avatar_img = person.avatar.url %>
       <div class="col-md-2 col-sm-3 col-xs-4 profile">
-        <%= image_tag "rails.png", :class => "img-responsive" %>
+
+        <!-- use default pic for user if not avator found -->
+        <% if avatar_img.nil? %>
+          <%= image_tag "/avatar_default.png", :class => "img-responsive" %>
+        <% else %>
+          <%= image_tag avatar_img, :class => "img-responsive" %>
+        <% end %>
 
         <div class="profile-content">
           <div class="row"><div class="name"><%= person.name %></div></div>
-          <div class="row"><i class="fa fa-github"></i>
-            <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %>
-          </div>
-          <div class="row"><i class="fa fa-link"></i>
-            <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
-          </div>
+
+          <% unless person.githubProfile.nil? || person.githubProfile == '' %>
+            <div class="row"><i class="fa fa-github"></i>
+              <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %>
+            </div>
+          <% end %>
+
+          <% unless person.website.nil? || person.website == '' %>
+            <div class="row"><i class="fa fa-link"></i>
+              <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
+            </div>
+          <% end %>
+
         </div>
       </div>
     <% end %></div>
-    <div class="row">
-      <a class="class-btn hvr-bounce-to-top btn btn-lg pull-right" data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add Classmate</a>
-    </div>
   </div>
 </div>
 
@@ -31,12 +42,18 @@
       </div>
       <div class="modal-body">
       <%= simple_form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json}, defaults: { input_html: { class: 'form-special' } } do |f| %>
-        <%= f.input :name, label: 'Your name'%>
-        <%= f.input :githubProfile, label: 'GitHub Page' %>
-        <%= f.input :website, label: 'Personal Website' %>
+        <%= f.input :name, label: 'Your name please (required)', required: true %>
+        <%= f.input :githubProfile, label: 'GitHub Page (optional)' %>
+        <%= f.input :website, label: 'Personal Website (optional)' %>
+        <%= f.label 'Please upload an avatar image' %>
+        <%= f.file_field :avatar %>
+
+        <div class="alert alert-info" role="alert"><strong>Note: </strong>An admin will first have to approve your information, before your name can appear up on this page</div>
+
       </div>
       <div class="modal-footer">
-        <%= f.button :submit, "Add", class: "pull-left" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.button :submit, "Save", class: "btn btn-primary" %>
       <% end %>
       </div>
       </div>
