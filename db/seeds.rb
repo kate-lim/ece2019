@@ -1,10 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-Classmate.delete_all
-Classmate.create(name: 'Bilal Majeed', 	githubProfile: 'bilalmajeed', 	website: 'bilalmajeed.com')
-Classmate.create(name: 'Kate Lim', 		githubProfile: 'kate-lim', 		website: 'kate-lim.github.io')
-
 # Basic course information from http://ugradcalendar.uwaterloo.ca/page/ENG-Computer-Engineering-Electrical-Engineering
 Course.delete_all
 Course.create!([
@@ -14,14 +10,14 @@ Course.create!([
 	{subject: 'ECE', 		number: '150', 	term: '1A'},
 	{subject: 'CHE', 		number: '102', 	term: '1A'},
 	{subject: 'MATH', 		number: '117', 	term: '1A'},
-	
+
 	{subject: 'ECE', 		number: '100B',	term: '1B'},
 	{subject: 'ECE', 		number: '103', 	term: '1B'},
 	{subject: 'ECE', 		number: '106', 	term: '1B'},
 	{subject: 'ECE', 		number: '124',	term: '1B'},
 	{subject: 'ECE', 		number: '155',	term: '1B'},
 	{subject: 'MATH', 		number: '119',	term: '1B'},
-	
+
 	{subject: 'ECE', 		number: '200A',	term: '2A'},
 	{subject: 'ECE', 		number: '204A',	term: '2A'},
 	{subject: 'ECE', 		number: '205',	term: '2A'},
@@ -30,7 +26,7 @@ Course.create!([
 	{subject: 'ECE', 		number: '250',	term: '2A'},
 	{subject: 'ECE', 		number: '290',	term: '2A'},
 	{subject: 'MATH', 		number: '215',	term: '2A'},
-	
+
 	{subject: 'ECE', 		number: '200B',	term: '2B'},
 	{subject: 'ECE', 		number: '207',	term: '2B'},
 	{subject: 'ECE', 		number: '242',	term: '2B'},
