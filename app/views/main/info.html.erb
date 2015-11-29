@@ -1,0 +1,21 @@
+<div class="wrapper">
+	<div class="container">
+		<h2>uWaterloo Articles</h2>
+		<div class="col-sm-12" id="eng-news">
+			<h3>Engineering</h3>
+			<% @eng_news.each do |article| %>
+				<div class="col-sm-12 article">
+					<%= link_to article.title, article.url, :target => '_blank' %>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-sm-12" id="general-news">
+			<h3>General</h3>
+			<% @general_news.each do |article| %>
+				<div class="col-sm-12 article">
+					<%= link_to article.title, article.url, :target => '_blank' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

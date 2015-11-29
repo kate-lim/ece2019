@@ -3,8 +3,8 @@ class CoursesController < ApplicationController
 		@showNav = true
 		@pageName = "Courses"
 		@navBarTitle = "ECE Courses"
-		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
 
+		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
 		@courses = Array.new
 
 		Course.all.order(:term, :number, :major).each do |course|
