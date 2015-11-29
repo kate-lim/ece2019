@@ -10,12 +10,14 @@ class CoursesController < ApplicationController
 		Course.all.order(:term, :number, :major).each do |course|
 			course_info = {
 				"course_code" 	=> course.subject == 'Elective' ? course.subject : course.subject + " " + course.number,
-				"term" 			=> course.term,
-				"title" 		=> course.subject == 'Elective' ? "See more information below" : course.title,
-				"major" 		=> course.major
+				"term" 					=> course.term,
+				"title" 				=> course.subject == 'Elective' ? "See more information below" : course.title,
+				"major" 				=> course.major
 			}
 			@courses.push(course_info)
 		end
+
+		load_electives
 	end
 
 	def detail
@@ -45,7 +47,6 @@ class CoursesController < ApplicationController
 				@te_electives.push(elective_info)
 			end
 		end
-		render partial: 'electives'
 	end
 
 	def detail_elective

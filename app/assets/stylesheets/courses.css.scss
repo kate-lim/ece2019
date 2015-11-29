@@ -9,9 +9,10 @@
   padding-left: 10px;
 
 	.toggle-courses{
+		border-bottom: 1px solid red;
 		font-size: 85%;
 		font-weight: 300;
-		padding-left: 10px;
+		margin-left: 10px;
 		color: #797979;
 
 		&:hover{
@@ -25,7 +26,7 @@
 	margin-top: 20px;
 
 	td {
-		color: #797979;
+		color: #606060;
 		border-top: none !important;
 		padding-top: 20px !important;
 		padding-bottom: 20px !important;
@@ -43,39 +44,23 @@ p {
 	color: #797979;
 }
 
-.modal-dialog{
-}
+.electives{
+	.elective-cat-title{
+		color: #606060;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		text-transform: uppercase;
+  	text-align: left;
 
-.elective-type h1, .elective-type h3, .elective-type h4 {
-	padding-top: 5px;
-	padding-bottom: 0;
-}
-
-.elective-type h5 {
-	padding-top: 2px;
-}
-
-.elective-sub-category, .list-of-electives {
-	padding-left: 1em !important;
-}
-
-.toggle-elective {
-	padding-right: 0.3em;
-}
-
-.toggle-elective:hover {
-	cursor: pointer;
+  	i {
+  		color: #606060;
+			vertical-align: middle;
+			font-size: 60% !important;
+		}
+	}
 }
 
 .no-hover:hover {
 	cursor: context-menu !important;
 	font-weight: normal !important;
-}
-
-.elective-cell {
-	width: 12%;
-	&:hover {
-		cursor: pointer;
-		font-weight: bold;
-	}
 }
