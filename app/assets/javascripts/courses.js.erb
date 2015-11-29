@@ -1,39 +1,25 @@
 $(function() {
-  $.ajax({
-    type: "POST",
-    url: "/courses/load_electives",
-    dataType: "html",
-    success: function (result) {
-      $('#electives').empty();
-      $('#electives').html(result);
-    },
-    error: function () {
-      alert('Something went wrong :(');
-    }
-  });
-
   $('.toggle-courses').click(function(){
     var major = $(this).text().split(' ')[0];
     if(major == "EE") {
       $('.CE-course').hide();
       $('.EE-course').show();
-      $('.title').text("Electrical Engineering Core Courses");
+      $('.name').text("Electrical Engineering Core Courses");
       $(this).text("CE Schedule");
     } else {
       $('.CE-course').show();
       $('.EE-course').hide();
-      $('.title').text("Computer Engineering Core Courses");
+      $('.name').text("Computer Engineering Core Courses");
       $(this).text("EE Schedule");
     }
   });
 
   //when you click a course, show a modal with the right info
-  $('td').click(function(){
+  $('td, .elective-cell').click(function(){
     if ($(this).attr("class") == 'no-hover'){ return; }
-    console.log();
     $('#course-detail-modal').empty();
     var courseCode = $(this).text().trim();
-    var url = $(this).data("course") == true ? "/courses/detail" : "/courses/detail_elective"
+    var url = $(this).data("course") == true ? "/courses/detail" : "/courses/detail_elective";
     if(courseCode.length != 0) {
       $.ajax({
         type: "POST",
@@ -50,17 +36,27 @@ $(function() {
     }
   });
 
-});
+  //expand the hidden tet for each elective type
+  $('[data-elective-cat]').click(function(){
+    var cat_to_expand = $(this).data('elective-cat');
+    $('#CSE, #TE, #NSE').collapse('hide');
+    $('#'+cat_to_expand).collapse('toggle');
+  });
 
-function toggleElectiveContainer(data) {
-  var toggler = $(data);
-  var id = toggler.attr('value');
-  if(toggler.text() == "+") {
-    $('#' + id).show();
-    toggler.text("-");
-  }
-  else {
-    $('#' + id).hide();
-    toggler.text("+");
-  }
-}
+  //when elective hiden, label should have +
+  $('#CSE, #TE, #NSE').on('hide.bs.collapse', function () {
+    var cat = $(this).attr("id");
+
+    var elective_title = $('[data-elective-cat='+cat+']').html().split('</i> ');
+    elective_title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat='+cat+']').html(elective_title.join('</i> '));
+  });
+  //when elective shown, label should have -
+  $('#CSE, #TE, #NSE').on('show.bs.collapse', function () {
+    var cat = $(this).attr("id");
+
+    var elective_title = $('[data-elective-cat='+cat+']').html().split('</i> ');
+    elective_title[0] = '<i class="fa fa-minus">';
+    $('[data-elective-cat='+cat+']').html(elective_title.join('</i> '));
+  });
+});
