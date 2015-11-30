@@ -40,6 +40,31 @@
 	}
 }
 
+.elective-table{
+
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+
+	td:nth-child(2n+2) {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		color: #0073a8;
+	}
+
+	tr{border-bottom: 1px solid #DDDDDD;}
+	tr:last-child{border-bottom: none !important;}
+}
+
+.table-header{
+	color: #606060;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	@extend .h4;
+	text-align: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+
 p {
 	color: #797979;
 }
@@ -50,10 +75,10 @@ p {
 		font-family: 'Lato', sans-serif;
 		font-weight: 300;
 		text-transform: uppercase;
-  	text-align: left;
+	text-align: left;
 
-  	i {
-  		color: #606060;
+	i {
+		color: #606060;
 			vertical-align: middle;
 			font-size: 60% !important;
 		}

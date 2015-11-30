@@ -2,121 +2,217 @@
 <div class="elective-cat-wrapper collapse" id="CSE">
 	<h5>Two courses from List C and two courses from List A, C, or D</h5>
 
-	<h4>List A - Impact Courses</h4>
-	<% @cse_electives.each do |elective| %>
-		<% if elective["list"] == "A" %>
-			<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-				<%= elective["code"] %>
-			</div>
-		<% end %>
-	<% end %>
+	<div class="table-header" data-list="listA"><i class="fa fa-chevron-down"></i> List A - Impact Courses</div>
+	<div class="table-responsive collapse" id="listA">
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @cse_electives.each do |elective| %>
+					<% if elective["list"] == "A" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-	<h4>List C - Humanities and Social Sciences Courses</h4>
-
-		<h5>1. Pre-scheduled - normally at 11:30 MWF, 7-10 M, or 7-10 T and therefore conflict-free for most Engierring students</h5>
-		<% @cse_electives.each do |elective| %>
-			<% if elective["list"] == "C-1" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-					<%= elective["code"] %>
-				</div>
+	<div class="table-header" data-list="listC"><i class="fa fa-chevron-down"></i> List C - Humanities and Social Sciences Courses</div>
+	<div class="table-responsive collapse" id="listC" >
+		<table class="table table-striped elective-table">
+			<tr><td colspan="100%" style="text-align:center;">1. Pre-scheduled - normally at 11:30 MWF, 7-10 M, or 7-10 T, thereforemostly conflict-free for most Eng. students</td></tr>
+			<% @count = 1 %>
+			<tr colspan="100%">
+			<% @cse_electives.each do |elective| %>
+				<% if elective["list"] == "C-1" %>
+					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
+					<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+					<% @count = @count + 1 %>
+				<% end %>
 			<% end %>
-		<% end %>
+			</tr>
 
-		<h5>2. Non Pre-scheduled</h5>
-		<% @cse_electives.each do |elective| %>
-			<% if elective["list"] == "C-2" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-	      	<%= elective["code"] %>
-	    	</div>
-	  	<% end %>
-  	<% end %>
+			<tr><td colspan="100%" style="text-align:center;">2. Non Pre-scheduled</td></tr>
+			<% @count = 1 %>
+			<tr colspan="100%">
+			<% @cse_electives.each do |elective| %>
+				<% if elective["list"] == "C-2" %>
+					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+						<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+						<% else %><%= elective["title"] %><% end %>
+					</td>
+					<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+					<% @count = @count + 1 %>
+				<% end %>
+			<% end %>
+			</tr>
+		</table>
+	</div>
 
-	<h4>List D - Other Permissible Complementary Studies Courses</h4>
-	<% @cse_electives.each do |elective| %>
-		<% if elective["list"] == "D" %>
-			<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-      	<%= elective["code"] %>
-			</div>
-		<% end %>
-	<% end %>
-
+	<div class="table-header" data-list="listD"><i class="fa fa-chevron-down"></i> List D - Other Permissible Complementary Studies Courses</div>
+	<div class="table-responsive collapse" id="listD" >
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @cse_electives.each do |elective| %>
+					<% if elective["list"] == "D" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 </div>
 
 
 <h3 data-elective-cat="NSE" class="elective-cat-title"><i class="fa fa-plus"></i> Natural Science Electives</h3>
 <div class="elective-cat-wrapper collapse" id="NSE">
-	<h5>Two courses : at least one from List 1 and at most one from List 2</h5>
+	<h5>Two courses: at least one from List 1 and at most one from List 2</h5>
 
-		<h4>List 1 - Natural Science Intensive Course</h4>
-		<% @nse_electives.each do |elective| %>
-			<% if elective["list"] == "1" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-	    <% end %>
-		<% end %>
+	<div class="table-header" data-list="list1"><i class="fa fa-chevron-down"></i> List 1 - Natural Science Intensive Course</div>
+	<div class="table-responsive collapse" id="list1">
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @nse_electives.each do |elective| %>
+					<% if elective["list"] == "1" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-		<h4>List 2 - Natural Science Courses</h4>
-		<% @nse_electives.each do |elective| %>
-			<% if elective["list"] == "2" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-	    <% end %>
-		<% end %>
-
+	<div class="table-header" data-list="list2"><i class="fa fa-chevron-down"></i> List 2 - Natural Science Courses</div>
+	<div class="table-responsive collapse" id="list2" >
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @nse_electives.each do |elective| %>
+					<% if elective["list"] == "2" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 </div>
-
-
 
 <h3 data-elective-cat="TE" class="elective-cat-title"><i class="fa fa-plus"></i> Technical Electives</h3>
 <div class="elective-cat-wrapper collapse" id="TE">
-	<h5>Five courses : at least two courses must be chosen from ECE 406-493 or 499. Up to two TEs may be technical courses from other programs;
+	<h5>Five courses: at least two courses must be chosen from ECE 406-493 or 499. Up to two TEs may be technical courses from other programs;
 			such courses must have sufficiently advanced technical content to be allowed</h5>
 
-		<h4>4A - Normally offered for the spring Term</h4>
-		<% @te_electives.each do |elective| %>
-			<% if elective["list"] == "4A" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-			<% end %>
-		<% end %>
+	<div class="table-header" data-list="list4A"><i class="fa fa-chevron-down"></i> 4A - Normally offered for the spring Term</div>
+	<div class="table-responsive collapse" id="list4A">
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @te_electives.each do |elective| %>
+					<% if elective["list"] == "4A" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-		<h4>4B - Normally offered for the winter Term</h4>
-		<% @te_electives.each do |elective| %>
-			<% if elective["list"] == "4B" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-			<% end %>
-		<% end %>
+	<div class="table-header" data-list="list4B"><i class="fa fa-chevron-down"></i> 4B - Normally offered for the winter Term</div>
+	<div class="table-responsive collapse" id="list4B" >
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @te_electives.each do |elective| %>
+					<% if elective["list"] == "4B" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-		<h4>Fourth Year Design Project - Offered every term. Students may take it at most once.</h4>
-		<% @te_electives.each do |elective| %>
-			<% if !elective["list"] %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-			<% end %>
-		<% end %>
+	<div class="table-header" data-list="listDesignProj"><i class="fa fa-chevron-down"></i> Fourth Year Design Project - Offered every term. Students may take it at most once.</div>
+	<div class="table-responsive collapse" id="listDesignProj" >
+		<table class="table table-striped elective-table">
+			<tr colspan="100%">
+				<% @te_electives.each do |elective| %>
+					<% if !elective["list"] %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-		<h4>Core Electrical Engineering Courses - Students of Computer Entineering may use at most two courses</h4>
-		<% @te_electives.each do |elective| %>
-			<% if elective["list"] == "CE" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-        	<%= elective["code"] %>
-        </div>
-			<% end %>
-		<% end %>
+	<div class="table-header" data-list="listCE"><i class="fa fa-chevron-down"></i> Core Electrical Engineering Courses - Students of Computer Entineering may use at most two courses</div>
+	<div class="table-responsive collapse" id="listCE" >
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @te_electives.each do |elective| %>
+					<% if elective["list"] == "CE" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+							<% if @count % 3 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 
-		<h4>Core Computer Engineering Courses - Students of Electrical Entineering may use at most two courses</h4>
-		<% @te_electives.each do |elective| %>
-			<% if elective["list"] == "EE" %>
-				<div class="elective-cell col-sm-1" data-course="false" data-toggle="modal" data-target="#course-detail-modal" title="<%=elective["title"]%>">
-					<%= elective["code"] %>
-		  	</div>
-			<% end %>
-		<% end %>
-
+	<div class="table-header" data-list="listEE"><i class="fa fa-chevron-down"></i> Core Computer Engineering Courses - Students of Electrical Entineering may use at most two courses</div>
+	<div class="table-responsive collapse" id="listEE" >
+		<table class="table table-striped elective-table">
+			<% @count = 1 %>
+			<tr colspan="100%">
+				<% @te_electives.each do |elective| %>
+					<% if elective["list"] == "EE" %>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
+								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
+								<% else %><%= elective["title"] %><% end %>
+							</td>
+							<% if @count % 3 == 0 %></tr><tr colspan="0"><% end %>
+							<% @count = @count + 1 %>
+					<% end %>
+				<% end %>
+			</tr>
+		</table>
+	</div>
 </div>
