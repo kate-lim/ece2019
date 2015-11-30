@@ -56,3 +56,14 @@ hr {
 .article {
   font-size: 1.2em;
 }
+
+.calendar-date {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+
+.calendar-cell {
+  padding-left: 0;
+}
