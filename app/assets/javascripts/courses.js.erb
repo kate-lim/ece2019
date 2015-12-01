@@ -1,39 +1,25 @@
 $(function() {
-  $.ajax({
-    type: "POST",
-    url: "/courses/load_electives",
-    dataType: "html",
-    success: function (result) {
-      $('#electives').empty();
-      $('#electives').html(result);
-    },
-    error: function () {
-      alert('Something went wrong :(');
-    }
-  });
-
   $('.toggle-courses').click(function(){
     var major = $(this).text().split(' ')[0];
     if(major == "EE") {
       $('.CE-course').hide();
       $('.EE-course').show();
-      $('.title').text("Electrical Engineering Core Courses");
+      $('.name').text("Electrical Engineering Core Courses");
       $(this).text("CE Schedule");
     } else {
       $('.CE-course').show();
       $('.EE-course').hide();
-      $('.title').text("Computer Engineering Core Courses");
+      $('.name').text("Computer Engineering Core Courses");
       $(this).text("EE Schedule");
     }
   });
 
   //when you click a course, show a modal with the right info
-  $('td').click(function(){
+  $('.courses-table td, .elective-cell').click(function(){
     if ($(this).attr("class") == 'no-hover'){ return; }
-    console.log();
     $('#course-detail-modal').empty();
-    var courseCode = $(this).text().trim();
-    var url = $(this).data("course") == true ? "/courses/detail" : "/courses/detail_elective"
+    var courseCode = $(this).data('course-code').trim();
+    var url = $(this).data("course") == true ? "/courses/detail" : "/courses/detail_elective";
     if(courseCode.length != 0) {
       $.ajax({
         type: "POST",
@@ -50,17 +36,34 @@ $(function() {
     }
   });
 
-});
+  //expand the hidden tet for each elective type
+  $('[data-elective-cat]').click(function(){
+    var elective_title = $(this).html().split('</i> ');
+    if (elective_title[0] == '<i class="fa fa-plus">'){elective_title[0] = '<i class="fa fa-minus">'; }
+    else { elective_title[0] = '<i class="fa fa-plus">'; }
 
-function toggleElectiveContainer(data) {
-  var toggler = $(data);
-  var id = toggler.attr('value');
-  if(toggler.text() == "+") {
-    $('#' + id).show();
-    toggler.text("-");
-  }
-  else {
-    $('#' + id).hide();
-    toggler.text("+");
-  }
-}
+    $('#CSE, #TE, #NSE').collapse('hide');
+    var cse_title = $('[data-elective-cat="CSE"]').html().split('</i> ');
+    cse_title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat="CSE"]').html(cse_title.join('</i> '));
+
+    var cse_title = $('[data-elective-cat="NSE"]').html().split('</i> ');
+    cse_title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat="NSE"]').html(cse_title.join('</i> '));
+
+    var te_title = $('[data-elective-cat="TE"]').html().split('</i> ');
+    te_title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat="TE"]').html(te_title.join('</i> '));
+
+    $(this).html(elective_title.join('</i> '));
+    var cat_to_expand = $(this).data('elective-cat');
+    $('#'+cat_to_expand).collapse('toggle');
+  });
+
+  $('[data-list]').click(function(){
+    var list_to_expand = $(this).data('list');
+    $('#'+list_to_expand).collapse('toggle');
+    $('#listA, #listC, #listD, #list1, #list2, #list4A, #list4B, #listDesignProj, #listCE, #listEE').collapse('hide');
+  });
+
+});

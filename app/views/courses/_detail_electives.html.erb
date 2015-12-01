@@ -1,32 +1,39 @@
 <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-            <h4 class="modal-title" id="myModalLabel"><%= @elective_info["code"]  %></h4>
-            <% if !@elective_info["notes"] %>
-                <div class="course-detail-term">
-                    Type: <%= @elective_info["type"] %> | List: <%= @elective_info["list"] %> | Credit: <%= @elective_info["units"] %>
-                </div>
-            <% end %>
-        </div>
+  <div class="modal-content">
 
-        <div class="modal-body">
-            <% if @elective_info["title"] %>
-                <div class="course-detail-title"><%= @elective_info["title"] %></div>
-                <br>
-                <div class="course-detail-description"><%= @elective_info["description"] %></div>
-            <% end %>
-            <% if @elective_info["notes"] %>
-                <div class="course-detail-notes">** <%= @elective_info["notes"] %> **</div>
-            <% end %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel"><%= @elective_info["code"]%></h4>
+      <% if !@elective_info["notes"] %>
+        <div class="course-detail-term">
+          Type: <%= @elective_info["type"] %> | List: <%= @elective_info["list"] %> | Credit: <%= @elective_info["units"] %>
         </div>
-
-        <div class="modal-footer">
-            <% if @elective_info["number"] == "*" %>
-                <%= link_to "Find all " + @elective_info["subject"] + " courses!", 'http://www.ucalendar.uwaterloo.ca/1516/COURSE/course-' + @elective_info["subject"] +'.html', :target => '_blank' %>
-            <% else %>
-                <%= link_to @elective_info["subject"] + " " + @elective_info["number"] + " @ UW Flow", 'https://uwflow.com/course/'+ @elective_info["subject"].downcase +  @elective_info["number"], :target => '_blank' %>
-            <% end %>
-        </div>
+      <% end %>
     </div>
+
+    <div class="modal-body">
+      <% if @elective_info["title"] %>
+        <div class="course-detail-title"><%= @elective_info["title"] %></div>
+        <br>
+        <div class="course-detail-description"><%= @elective_info["description"] %></div>
+      <% end %>
+      <% if @elective_info["notes"] %>
+          <div class="course-detail-notes">** <%= @elective_info["notes"] %> **</div>
+      <% end %>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <% if @elective_info["number"] == "*" %>
+        <%= link_to "Find all " + @elective_info["subject"] + " courses!", 'http://www.ucalendar.uwaterloo.ca/1516/COURSE/course-' + @elective_info["subject"] +'.html',
+            :target => '_blank',
+            :class => 'btn btn-info' %>
+      <% else %>
+        <%= link_to @elective_info["subject"] + " " + @elective_info["number"] + " @ UW Flow", 'https://uwflow.com/course/'+ @elective_info["subject"].downcase +  @elective_info["number"].downcase,
+            :target => '_blank',
+            :class => 'btn btn-info' %>
+      <% end %>
+    </div>
+
+  </div>
 </div>

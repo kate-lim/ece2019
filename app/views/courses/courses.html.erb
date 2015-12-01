@@ -2,32 +2,31 @@
 	<div class="container">
 		<div class="row">
 			<div class="courses-header">
-				<span class="title">Computer Engineering Core Courses</span>
+				<span class="name">Computer Engineering Core Courses</span>
 				<span class="toggle-courses">EE Schedule</span>
 			</div>
-
 		</div>
 		<div class="row">
 			<div class="table-responsive">
-				<table class="table">
+				<table class="table courses-table">
 				<% @terms.each do |term_count| %>
 					<% if term_count == '2A' %><tr class="current-term"><% else %><tr><% end %>
 						<td class="term-cell no-hover"><%= term_count %></td>
 						<% @courses.each do |course| %>
 							<% if course["term"] == term_count %>
 								<% if course["major"] == "CE" %>
-								<td class="CE-course" data-course="true" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" value="<%=course["course_code"] %>">
+								<td class="CE-course" data-course="true" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= course["course_code"] %>">
 									<%= course["course_code"] %>
 								</td>
 								<% elsif course["major"] == "EE" %>
-									<td class="EE-course" data-course="true" data-toggle="modal" data-target="#course-detail-modal" title="<%=course["title"]%>" value="<%=course["course_code"] %>">
+									<td class="EE-course" data-course="true" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= course["course_code"] %>">
 										<%= course["course_code"] %>
 									</td>
 								<% else %>
 									<% if course["course_code"] == 'Elective' %>
-										<td class="no-hover" title="<%=course["title"]%>"><%= course["course_code"] %></td>
+										<td class="no-hover"><%= course["course_code"] %></td>
 									<% else %>
-										<td data-toggle="modal" data-course="true" data-target="#course-detail-modal" title="<%=course["title"]%>" value="<%=course["course_code"]%>">
+										<td data-toggle="modal" data-course="true" data-target="#course-detail-modal" data-course-code="<%= course["course_code"] %>">
 											<%= course["course_code"] %>
 										</td>
 									<% end %>
@@ -40,10 +39,12 @@
 			</div>
 		</div>
 		<p><strong>Note: </strong>Students can enrol in the sequence ECE 498A-498B, or the sequence GENE 403-404, in their 4A-4B terms.
-		   Combinations such as ECE 498A-GENE 404 are not allowed</p>
+			 Combinations such as ECE 498A-GENE 404 are not allowed</p>
 		<br/>
-		<div id="electives"></div>
+
+		<div class="electives"><%= render "electives" %></div>
 	</div>
 </div>
 
 <div class="modal fade" id="course-detail-modal" role="dialog" aria-labelledby="CourseDetail"></div>
+

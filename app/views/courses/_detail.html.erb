@@ -13,9 +13,9 @@
 
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <%= link_to @selected_course.subject + " " + @selected_course.number + " @ UW Flow", 'https://uwflow.com/course/'+ @selected_course.subject.downcase +  @selected_course.number,
+      <%= link_to @selected_course.subject + " " + @selected_course.number + " @ UW Flow", 'https://uwflow.com/course/'+ @selected_course.subject.downcase +  @selected_course.number.downcase,
           :target => '_blank',
-          :class => 'btn btn-info ' %>
+          :class => 'btn btn-info' %>
     </div>
   </div>
 </div>
