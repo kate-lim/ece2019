@@ -1,2 +1,17 @@
 $(function() {
 });
+
+function submitFeedback() {
+	$.ajax({
+        type: "POST",
+        url: '/main/feedback_email',
+        data: {'name_to': $('#name-to').val(), 'email_to': $('#email-to').val(), 'feedback_content': $('#feedback-content').val()},
+        success: function () {
+          $('#feedback-popup').hide();
+          alert("Thank you. We appreciate your feedback!");
+        },
+        error: function () {
+          alert('Something went wrong :(');
+        }
+  	});
+}
