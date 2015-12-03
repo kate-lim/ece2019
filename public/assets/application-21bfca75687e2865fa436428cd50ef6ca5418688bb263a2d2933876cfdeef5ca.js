@@ -10884,10 +10884,10 @@ $(function() {
   });
 
   //when you click a course, show a modal with the right info
-  $('td, .elective-cell').click(function(){
+  $('.courses-table td, .elective-cell').click(function(){
     if ($(this).attr("class") == 'no-hover'){ return; }
     $('#course-detail-modal').empty();
-    var courseCode = $(this).text().trim();
+    var courseCode = $(this).data('course-code').trim();
     var url = $(this).data("course") == true ? "/courses/detail" : "/courses/detail_elective";
     if(courseCode.length != 0) {
       $.ajax({
@@ -10907,32 +10907,71 @@ $(function() {
 
   //expand the hidden tet for each elective type
   $('[data-elective-cat]').click(function(){
+    var elective_title = $(this).html().split('</i> ');
+    if (elective_title[0] == '<i class="fa fa-plus">'){elective_title[0] = '<i class="fa fa-minus">'; }
+    else { elective_title[0] = '<i class="fa fa-plus">'; }
+
+    collapseAllElectiveTypes();
+    collapseAllLists();
+
+    $(this).html(elective_title.join('</i> '));
     var cat_to_expand = $(this).data('elective-cat');
-    $('#CSE, #TE, #NSE').collapse('hide');
     $('#'+cat_to_expand).collapse('toggle');
   });
 
-  //when elective hiden, label should have +
-  $('#CSE, #TE, #NSE').on('hide.bs.collapse', function () {
-    var cat = $(this).attr("id");
+  $('[data-list]').click(function(){
+    var list_title = $(this).html().split('</i> ');
+    if (list_title[0] == '<i class="fa fa-chevron-down">'){ list_title[0] = '<i class="fa fa-chevron-up">'; }
+    else { list_title[0] = '<i class="fa fa-chevron-down">'; }
 
-    var elective_title = $('[data-elective-cat='+cat+']').html().split('</i> ');
-    elective_title[0] = '<i class="fa fa-plus">';
-    $('[data-elective-cat='+cat+']').html(elective_title.join('</i> '));
-  });
-  //when elective shown, label should have -
-  $('#CSE, #TE, #NSE').on('show.bs.collapse', function () {
-    var cat = $(this).attr("id");
+    collapseAllLists();
 
-    var elective_title = $('[data-elective-cat='+cat+']').html().split('</i> ');
-    elective_title[0] = '<i class="fa fa-minus">';
-    $('[data-elective-cat='+cat+']').html(elective_title.join('</i> '));
+    $(this).html(list_title.join('</i> '));
+    var list_to_expand = $(this).data('list');
+    $('#'+list_to_expand).collapse('toggle');
   });
 });
-(function() {
 
+var collapseAllElectiveTypes = function(){
+  var cats = ["CSE", "TE", "NSE"];
 
-}).call(this);
+  $.each(cats, function(key, value){
+    $('#'+value).collapse('hide');
+    var title = $('[data-elective-cat="'+value+'"]').html().split('</i> ');
+    title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat="'+value+'"]').html(title.join('</i> '));
+  });
+}
+
+var collapseAllLists = function(){
+  var lists = ["listA", "listC", "listD", "list1", "list2", "list4A", "list4B", "listDesignProj", "listCE", "listEE"];
+
+  $.each(lists, function(key, value){
+    $('#'+value).collapse('hide');
+    var title = $('[data-list="'+value+'"]').html().split('</i> ');
+    title[0] = '<i class="fa fa-chevron-down">';
+    $('[data-list="'+value+'"]').html(title.join('</i> '));
+  });
+}
+;
+$(function() {
+});
+
+function submitFeedback() {
+	$.ajax({
+        type: "POST",
+        url: '/main/feedback_email',
+        data: {'name_to': $('#name-to').val(), 'email_to': $('#email-to').val(), 'feedback_content': $('#feedback-content').val()},
+        success: function () {
+          $('#feedback-popup').hide();
+          alert("Thank you. We appreciate your feedback!");
+        },
+        error: function () {
+          alert('Something went wrong :(');
+        }
+  	});
+}
+;
 (function() {
   var $, validateElement, validateForm, validatorsFor,
     indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -11610,8 +11649,8 @@ $('head title').html('ECE 2019 | ' + redirect.charAt(0).toUpperCase() + redirect
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-	if ($(".navbar").offset().top > 50) {
-	  $(".navbar-fixed-top").addClass("top-nav-collapse");
+	if ($(".navbar") != undefined && $(".navbar").length != 0 && $(".navbar").offset().top > 50) {
+	    $(".navbar-fixed-top").addClass("top-nav-collapse");
 	} else {
 		$(".navbar-fixed-top").removeClass("top-nav-collapse");
 	}
@@ -11623,5 +11662,20 @@ $('document').ready(function(){
 });
 
 $(function () {
-	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip();
+
+	$('#feedback-trigger').click(function(){
+		$('#feedback-popup').empty();
+		$.ajax({
+	        type: "POST",
+	        url: '/main/feedback_popup',
+	        dataType: "html",
+	        success: function (result) {
+	          $('#feedback-popup').html(result);
+	        },
+	        error: function () {
+	          alert('Something went wrong :(');
+	        }
+      	});
+	});
 });

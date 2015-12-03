@@ -2,6 +2,27 @@ require 'uwaterlooapi'
 
 class MainController < ApplicationController
 	def index
+		#@navBarTitle = "Home"
+		@is_home = true
+	end
+
+	def feedback_popup
+		render partial: 'feedback_popup'
+	end
+
+	def feedback_email
+
+		data = {
+			"name" 	=> params[:name_to],
+			"email"	=> params[:email_to],
+			"feedback" => params[:feedback_content]
+		}
+
+		# puts params[:name_to]
+		# puts params[:email_to]
+		# puts params[:feedback_content]
+		FeedbackMailer.feedback(data).deliver
+		render :nothing => true
 	end
 
 	def info

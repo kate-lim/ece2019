@@ -323,3 +323,31 @@ Elective.create!([
 	{elective_type: 'TE',	list: 'EE',	subject: 'ECE',		number: '356',	lab: true},
 	{elective_type: 'TE',	list: 'EE',	subject: 'ECE',		number: '358',	lab: false}
 ])
+
+Term.delete_all
+Term.create!([
+	{ term: '1A',	is_coop: false,						start_date: Date.parse('2014-09-01'),		end_date: Date.parse('2014-12-31') },
+	{ term: '1A',	is_coop: true,		stream:	'4',	start_date: Date.parse('2015-01-01'),		end_date: Date.parse('2015-04-30') },
+	{ term: '1B',	is_coop: false,		stream:	'8',	start_date: Date.parse('2015-01-01'),		end_date: Date.parse('2015-04-30') },
+	{ term: '1B',	is_coop: true,		stream:	'8',	start_date: Date.parse('2015-05-01'),		end_date: Date.parse('2015-08-31') },
+	{ term: '1B',	is_coop: false,		stream:	'4',	start_date: Date.parse('2015-05-01'),		end_date: Date.parse('2015-08-31') },
+	{ term: '1B',	is_coop: true,		stream:	'4',	start_date: Date.parse('2015-09-01'),		end_date: Date.parse('2015-12-31') },
+	{ term: '2A',	is_coop: false,		stream:	'8',	start_date: Date.parse('2015-09-01'),		end_date: Date.parse('2015-12-31') },
+	{ term: '2A',	is_coop: true,		stream:	'8',	start_date: Date.parse('2016-01-01'),		end_date: Date.parse('2016-04-30') },
+	{ term: '2A',	is_coop: false,		stream:	'4',	start_date: Date.parse('2016-01-01'),		end_date: Date.parse('2016-04-30') },
+	{ term: '2A',	is_coop: true,		stream:	'4',	start_date: Date.parse('2016-05-01'),		end_date: Date.parse('2016-08-31') },
+	{ term: '2B',	is_coop: false,		stream:	'8',	start_date: Date.parse('2016-05-01'),		end_date: Date.parse('2016-08-31') },
+	{ term: '2B',	is_coop: true,		stream:	'8',	start_date: Date.parse('2016-09-01'),		end_date: Date.parse('2016-12-31') },
+	{ term: '2B',	is_coop: false,		stream:	'4',	start_date: Date.parse('2016-09-01'),		end_date: Date.parse('2016-12-31') },
+	{ term: '2B',	is_coop: true,		stream:	'4',	start_date: Date.parse('2017-01-01'),		end_date: Date.parse('2017-04-30') },
+	{ term: '3A',	is_coop: false,		stream:	'8',	start_date: Date.parse('2017-01-01'),		end_date: Date.parse('2017-04-30') },
+	{ term: '3A',	is_coop: true,		stream:	'8',	start_date: Date.parse('2017-05-01'),		end_date: Date.parse('2017-08-31') },
+	{ term: '3A',	is_coop: false,		stream:	'4',	start_date: Date.parse('2017-05-01'),		end_date: Date.parse('2017-08-31') },
+	{ term: '3A',	is_coop: true,		stream:	'4',	start_date: Date.parse('2017-09-01'),		end_date: Date.parse('2017-12-31') },
+	{ term: '3B',	is_coop: false,		stream:	'8',	start_date: Date.parse('2017-09-01'),		end_date: Date.parse('2017-12-31') },
+	{ term: '3B',	is_coop: true,		stream:	'8',	start_date: Date.parse('2018-01-01'),		end_date: Date.parse('2018-04-30') },
+	{ term: '3B',	is_coop: false,		stream:	'4',	start_date: Date.parse('2018-01-01'),		end_date: Date.parse('2018-04-30') },
+	{ term: '4A',	is_coop: false,						start_date: Date.parse('2018-05-01'),		end_date: Date.parse('2018-08-31') },
+	{ term: '4A',	is_coop: true,						start_date: Date.parse('2018-09-01'),		end_date: Date.parse('2018-12-31') },
+	{ term: '4B',	is_coop: false,						start_date: Date.parse('2019-01-01'),		end_date: Date.parse('2019-04-30') }
+])

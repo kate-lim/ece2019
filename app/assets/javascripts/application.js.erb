@@ -21,8 +21,8 @@ $('head title').html('ECE 2019 | ' + redirect.charAt(0).toUpperCase() + redirect
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-	if ($(".navbar").offset().top > 50) {
-	  $(".navbar-fixed-top").addClass("top-nav-collapse");
+	if ($(".navbar") != undefined && $(".navbar").length != 0 && $(".navbar").offset().top > 50) {
+	    $(".navbar-fixed-top").addClass("top-nav-collapse");
 	} else {
 		$(".navbar-fixed-top").removeClass("top-nav-collapse");
 	}
@@ -34,5 +34,20 @@ $('document').ready(function(){
 });
 
 $(function () {
-	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip();
+
+	$('#feedback-trigger').click(function(){
+		$('#feedback-popup').empty();
+		$.ajax({
+	        type: "POST",
+	        url: '/main/feedback_popup',
+	        dataType: "html",
+	        success: function (result) {
+	          $('#feedback-popup').html(result);
+	        },
+	        error: function () {
+	          alert('Something went wrong :(');
+	        }
+      	});
+	});
 });

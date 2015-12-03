@@ -2011,7 +2011,7 @@ hr {
 
 /* line 9, /Users/loaner/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_type.scss */
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .courses-header, .h4, .h5, .h6 {
+.h1, .h2, .h3, .courses-header, .h4, .table-header, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -2029,8 +2029,9 @@ h6 .small,
 .h1 .small, .h2 small,
 .h2 .small, .h3 small, .courses-header small,
 .h3 .small,
-.courses-header .small, .h4 small,
-.h4 .small, .h5 small,
+.courses-header .small, .h4 small, .table-header small,
+.h4 .small,
+.table-header .small, .h5 small,
 .h5 .small, .h6 small,
 .h6 .small {
   font-weight: normal;
@@ -2060,7 +2061,7 @@ h3 .small, .h3 small, .courses-header small,
 }
 
 /* line 35, /Users/loaner/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_type.scss */
-h4, .h4,
+h4, .h4, .table-header,
 h5, .h5,
 h6, .h6 {
   margin-top: 10px;
@@ -2068,8 +2069,9 @@ h6, .h6 {
 }
 /* line 41, /Users/loaner/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_type.scss */
 h4 small,
-h4 .small, .h4 small,
+h4 .small, .h4 small, .table-header small,
 .h4 .small,
+.table-header .small,
 h5 small,
 h5 .small, .h5 small,
 .h5 .small,
@@ -2095,7 +2097,7 @@ h3, .h3, .courses-header {
 }
 
 /* line 50, /Users/loaner/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_type.scss */
-h4, .h4 {
+h4, .h4, .table-header {
   font-size: 18px;
 }
 
@@ -8997,11 +8999,41 @@ button.close {
 }
 
 /* line 43, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+.elective-table {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+/* line 48, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+.elective-table td:nth-child(2n+2) {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #0073a8;
+}
+/* line 54, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+.elective-table tr {
+  border-bottom: 1px solid #DDDDDD;
+}
+/* line 55, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+.elective-table tr:last-child {
+  border-bottom: none !important;
+}
+
+/* line 58, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+.table-header {
+  color: #606060;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+/* line 68, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
 p {
   color: #797979;
 }
 
-/* line 48, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+/* line 73, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
 .electives .elective-cat-title {
   color: #606060;
   font-family: 'Lato', sans-serif;
@@ -9009,14 +9041,14 @@ p {
   text-transform: uppercase;
   text-align: left;
 }
-/* line 55, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+/* line 80, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
 .electives .elective-cat-title i {
   color: #606060;
   vertical-align: middle;
   font-size: 60% !important;
 }
 
-/* line 63, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
+/* line 88, /Users/loaner/ece2019/app/assets/stylesheets/courses.css.scss */
 .no-hover:hover {
   cursor: context-menu !important;
   font-weight: normal !important;
@@ -9079,6 +9111,30 @@ hr {
   background-color: #F0F0F0;
   margin: 0px 5px;
   font-weight: 300;
+}
+
+/* line 56, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.article {
+  font-size: 1.2em;
+}
+
+/* line 60, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.calendar-date {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* line 67, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.calendar-cell {
+  padding-left: 0;
+}
+
+/* line 71, /Users/loaner/ece2019/app/assets/stylesheets/main.css.scss */
+.feedback-label {
+  float: right;
+  margin-top: 0.5em;
 }
 /*!
  * Hover.css (http://ianlunn.github.io/Hover/)

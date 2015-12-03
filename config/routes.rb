@@ -9,5 +9,7 @@ Ece2019::Application.routes.draw do
   post '/courses/detail' => 'courses#detail'
   post '/courses/detail_elective' => 'courses#detail_elective'
   post '/courses/load_electives' => 'courses#load_electives'
+  post '/main/feedback_popup' => 'main#feedback_popup'
+  post '/main/feedback_email' => 'main#feedback_email'
   get '/info' => 'main#info'
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130005606) do
+ActiveRecord::Schema.define(version: 20151201043640) do
 
   create_table "classmates", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 20151130005606) do
     t.date     "published_date"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.string   "term"
+    t.boolean  "is_coop"
+    t.string   "stream"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
