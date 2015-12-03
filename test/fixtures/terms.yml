@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term: MyString
+  is_coop: false
+  stream: MyString
+  start_date: 2015-11-30
+  end_date: 2015-11-30
+
+two:
+  term: MyString
+  is_coop: false
+  stream: MyString
+  start_date: 2015-11-30
+  end_date: 2015-11-30
