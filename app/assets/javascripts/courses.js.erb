@@ -42,18 +42,8 @@ $(function() {
     if (elective_title[0] == '<i class="fa fa-plus">'){elective_title[0] = '<i class="fa fa-minus">'; }
     else { elective_title[0] = '<i class="fa fa-plus">'; }
 
-    $('#CSE, #TE, #NSE').collapse('hide');
-    var cse_title = $('[data-elective-cat="CSE"]').html().split('</i> ');
-    cse_title[0] = '<i class="fa fa-plus">';
-    $('[data-elective-cat="CSE"]').html(cse_title.join('</i> '));
-
-    var cse_title = $('[data-elective-cat="NSE"]').html().split('</i> ');
-    cse_title[0] = '<i class="fa fa-plus">';
-    $('[data-elective-cat="NSE"]').html(cse_title.join('</i> '));
-
-    var te_title = $('[data-elective-cat="TE"]').html().split('</i> ');
-    te_title[0] = '<i class="fa fa-plus">';
-    $('[data-elective-cat="TE"]').html(te_title.join('</i> '));
+    collapseAllElectiveTypes();
+    collapseAllLists();
 
     $(this).html(elective_title.join('</i> '));
     var cat_to_expand = $(this).data('elective-cat');
@@ -61,9 +51,36 @@ $(function() {
   });
 
   $('[data-list]').click(function(){
+    var list_title = $(this).html().split('</i> ');
+    if (list_title[0] == '<i class="fa fa-chevron-down">'){ list_title[0] = '<i class="fa fa-chevron-up">'; }
+    else { list_title[0] = '<i class="fa fa-chevron-down">'; }
+
+    collapseAllLists();
+
+    $(this).html(list_title.join('</i> '));
     var list_to_expand = $(this).data('list');
     $('#'+list_to_expand).collapse('toggle');
-    $('#listA, #listC, #listD, #list1, #list2, #list4A, #list4B, #listDesignProj, #listCE, #listEE').collapse('hide');
   });
-
 });
+
+var collapseAllElectiveTypes = function(){
+  var cats = ["CSE", "TE", "NSE"];
+
+  $.each(cats, function(key, value){
+    $('#'+value).collapse('hide');
+    var title = $('[data-elective-cat="'+value+'"]').html().split('</i> ');
+    title[0] = '<i class="fa fa-plus">';
+    $('[data-elective-cat="'+value+'"]').html(title.join('</i> '));
+  });
+}
+
+var collapseAllLists = function(){
+  var lists = ["listA", "listC", "listD", "list1", "list2", "list4A", "list4B", "listDesignProj", "listCE", "listEE"];
+
+  $.each(lists, function(key, value){
+    $('#'+value).collapse('hide');
+    var title = $('[data-list="'+value+'"]').html().split('</i> ');
+    title[0] = '<i class="fa fa-chevron-down">';
+    $('[data-list="'+value+'"]').html(title.join('</i> '));
+  });
+}
