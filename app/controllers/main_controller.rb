@@ -11,17 +11,18 @@ class MainController < ApplicationController
 	end
 
 	def feedback_email
-
+		emails = ['katelim604@gmail.com', 'bilalmajeed247@gmail.com']
+		
 		data = {
 			"name" 	=> params[:name_to],
 			"email"	=> params[:email_to],
 			"feedback" => params[:feedback_content]
 		}
-
-		# puts params[:name_to]
-		# puts params[:email_to]
-		# puts params[:feedback_content]
-		FeedbackMailer.feedback(data).deliver
+		
+		emails.each do |email_to|
+			FeedbackMailer.feedback(data, email_to).deliver	
+		end
+		
 		render :nothing => true
 	end
 
