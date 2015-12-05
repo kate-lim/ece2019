@@ -1,11 +1,11 @@
 class FeedbackMailer < ApplicationMailer
-	default from: "hotkoreanchick@hotmail.com"
+	default from: "uw.ece.2019@gmail.com"
 
-	def feedback(data)
+	def feedback(data, email_to)
 		@name = data["name"]
 		@email = data["email"]
 		@feedback = data["feedback"]
 
-	    mail(to: "katelim604@gmail.com", subject: "New Feedback From ECE 2019")
+	    mail(to: email_to, subject: "New Feedback From ECE 2019")
 	end
 end
