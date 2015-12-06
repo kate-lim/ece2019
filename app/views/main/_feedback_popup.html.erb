@@ -2,29 +2,24 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h3 class="modal-title" id="myModalLabel">How can we improve?</h3>
+      <h4 class="modal-title" id="myModalLabel">How can we improve?</h4>
     </div>
-
     <div class="modal-body">
-      <div class="row">
-        <div class="row">
-          <div class="col-sm-3"><label class="feedback-label"><b>Your Name: </b></label></div>
-          <input class="col-sm-8 feedback-input" id="name-to">
+      <form>
+        <div class="form-group">
+          <label for="name-to">Name: </label>
+          <input type="text" class="form-control" id="name-to">
         </div>
-        <div class="row">
-          <div class="col-sm-3"><label class="feedback-label"><b>E-mail Address: </b></label></div>
-          <input class="col-sm-8 feedback-input" id="email-to">
+        <div class="form-group">
+          <label for="email-to">Email: </label>
+          <input type="email" class="form-control" id="email-to">
         </div>
-        <div class="row">
-          <div class="col-sm-3"><label class="feedback-label"><b>Feedback: </b></label></div>
-          <textarea class="col-sm-8 feedback-input" id="feedback-content"></textarea>
-        </div>
-      </div>
+        <textarea class="form-control" id="feedback-content" rows="3" placeholder="Enter your comments here ... "></textarea>
+      </form>
     </div>
-
     <div class="modal-footer">
-      <!-- <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button> -->
-      <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitFeedback()">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-info" data-dismiss="modal" onclick="submitFeedback()">Submit</button>
     </div>
   </div>
 </div>

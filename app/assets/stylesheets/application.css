@@ -63,6 +63,10 @@ a {
   color: inherit;
 }
 
+.footer a:hover {
+  color: black;
+}
+
 .modal {
   font-family: 'Lato', sans-serif !important;
 }
