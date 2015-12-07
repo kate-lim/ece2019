@@ -2,8 +2,7 @@ require 'uwaterlooapi'
 
 class MainController < ApplicationController
 	def index
-		#@navBarTitle = "Home"
-		@is_home = true
+		@stick_footer = true
 	end
 
 	def feedback_popup
@@ -12,17 +11,17 @@ class MainController < ApplicationController
 
 	def feedback_email
 		emails = ['katelim604@gmail.com', 'bilalmajeed247@gmail.com']
-		
+
 		data = {
 			"name" 	=> params[:name_to],
 			"email"	=> params[:email_to],
 			"feedback" => params[:feedback_content]
 		}
-		
+
 		emails.each do |email_to|
-			FeedbackMailer.feedback(data, email_to).deliver	
+			FeedbackMailer.feedback(data, email_to).deliver
 		end
-		
+
 		render :nothing => true
 	end
 
@@ -30,7 +29,7 @@ class MainController < ApplicationController
 		@navBarTitle = "Information"
 		@pageName = "Information"
 		@showNav = true
-		
+
 		@general_news = Array.new
 		@eng_news = Array.new
 		# @sys_news = Array.new
@@ -46,9 +45,9 @@ class MainController < ApplicationController
 		end
 
 		@exam_schedule = Exam.all.order(:exam_date)
-		
+
 		puts @exam_schedule.where(:exam_day => "Thursday")
-		
+
 		@first_monday = @exam_schedule.first.exam_date
 		while @first_monday.monday? == false do
 		   @first_monday -= 1
