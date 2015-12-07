@@ -32,6 +32,9 @@ class CoursesController < ApplicationController
 		@te_electives = Array.new
 
 		Elective.all.order(:number, :notes, :elective_type, :list, :subject).each do |elective|
+			if elective.number == '*'
+				elective.title = "Click for more information"
+			end
 			elective_info = {
 				"code" 		=> elective.subject + " " + elective.number,
 				"list"		=> elective.list,
