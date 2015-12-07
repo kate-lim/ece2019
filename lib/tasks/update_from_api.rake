@@ -49,6 +49,5 @@ end
 
 #rake update_from_api:courses_to_update
 #rake update_from_api:electives_to_update
-#rake update_from_api:update_electives
 #rake update_from_api:update_news_info
 #rake update_from_api:update_exam_info
