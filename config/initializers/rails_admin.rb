@@ -6,7 +6,8 @@ RailsAdmin.config do |config|
     end
   end
 
-   config.main_app_name { ['ECE2019', 'Admin'] }
+ config.main_app_name { ['ECE2019', 'Admin'] }
+ config.default_items_per_page = 50
 
   ### Popular gems integration
 

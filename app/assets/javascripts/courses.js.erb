@@ -14,6 +14,9 @@ $(function() {
     }
   });
 
+  $('.toggle-courses').click();
+  $('#courses-page').show();
+
   //when you click a course, show a modal with the right info
   $('.courses-table td, .elective-cell').click(function(){
     if ($(this).attr("class") == 'no-hover'){ return; }
