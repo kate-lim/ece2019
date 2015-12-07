@@ -67,19 +67,18 @@
 	<!-- content from each view goes here -->
   	<%= yield %>
 
+  	<% if !@is_home %>
   	<footer class="footer">
       <div class="container">
       	<p class="text-muted">
       		Copyright &copy; 2015 &nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
-      		<% if @is_home %>
-      			<a id="feedback-trigger" data-toggle="modal" data-toggle="modal" data-target="#feedback-popup">We would love your feedback!</a>
-      		<% end %>
       		<% if @navBarTitle == 'Classmates'%>
       			<a data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add yourself to this page!</a>
       		<% end %>
       	</p>
       </div>
     </footer>
+    <% end %>
 
 	<!-- bootstrap js -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
