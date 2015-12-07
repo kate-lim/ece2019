@@ -4,6 +4,7 @@ class ClassmatesController < ApplicationController
     @pageName = "Classmates"
     @showNav = true
     @classmates = Classmate.all
+    @stick_footer = true
   end
 
   def create
