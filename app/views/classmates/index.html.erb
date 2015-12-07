@@ -42,7 +42,7 @@
       </div>
       <div class="modal-body">
       <%= simple_form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json}, defaults: { input_html: { class: 'form-special' } } do |f| %>
-        <%= f.input :name, label: 'Your name please (required)', required: true %>
+        <%= f.input :name, label: 'Your name please (required)' %>
         <%= f.input :githubProfile, label: 'GitHub Page (optional)' %>
         <%= f.input :website, label: 'Personal Website (optional)' %>
         <%= f.label 'Please upload an avatar image' %>
