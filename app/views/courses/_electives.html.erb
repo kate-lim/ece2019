@@ -41,10 +41,7 @@
 			<% @cse_electives.each do |elective| %>
 				<% if elective["list"] == "C-2" %>
 					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-						<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-						<% else %><%= elective["title"] %><% end %>
-					</td>
+					<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 					<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
 					<% @count = @count + 1 %>
 				<% end %>
@@ -61,10 +58,7 @@
 				<% @cse_electives.each do |elective| %>
 					<% if elective["list"] == "D" %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
 							<% @count = @count + 1 %>
 					<% end %>
@@ -104,10 +98,7 @@
 				<% @nse_electives.each do |elective| %>
 					<% if elective["list"] == "2" %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
 							<% @count = @count + 1 %>
 					<% end %>
@@ -147,10 +138,7 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "4B" %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 							<% if @count % 4 == 0 %></tr><tr colspan="0"><% end %>
 							<% @count = @count + 1 %>
 					<% end %>
@@ -166,10 +154,7 @@
 				<% @te_electives.each do |elective| %>
 					<% if !elective["list"] %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 					<% end %>
 				<% end %>
 			</tr>
@@ -184,10 +169,7 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "CE" %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 							<% if @count % 3 == 0 %></tr><tr colspan="0"><% end %>
 							<% @count = @count + 1 %>
 					<% end %>
@@ -204,10 +186,7 @@
 				<% @te_electives.each do |elective| %>
 					<% if elective["list"] == "EE" %>
 							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["code"] %></td>
-							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>">
-								<% if elective["title"].nil? || elective["title"] == '' %><%= elective["notes"] %>
-								<% else %><%= elective["title"] %><% end %>
-							</td>
+							<td class="elective-cell" data-course="false" data-toggle="modal" data-target="#course-detail-modal" data-course-code="<%= elective["code"] %>"><%= elective["title"] %></td>
 							<% if @count % 3 == 0 %></tr><tr colspan="0"><% end %>
 							<% @count = @count + 1 %>
 					<% end %>
