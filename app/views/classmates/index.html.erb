@@ -16,12 +16,14 @@
           <div class="row"><div class="name"><%= person.name %></div></div>
 
           <% unless person.githubProfile.nil? || person.githubProfile == '' %>
+            <% person.githubProfile = ((person.githubProfile.split('//')[-1]).split('www.')[-1]).split('/')[-1] %>
             <div class="row"><i class="fa fa-github"></i>
               <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %>
             </div>
           <% end %>
 
           <% unless person.website.nil? || person.website == '' %>
+            <% person.website = ((person.website.split('//')[-1]).split('www.')[-1]) %>
             <div class="row"><i class="fa fa-link"></i>
               <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
             </div>
@@ -50,8 +52,8 @@
         <h4 class="modal-title" id="myModalLabel">Add yourself to the page</h4>
       </div>
       <div class="modal-body">
-      <%= simple_form_for Classmate.new, validate: true, remote: true, html: {"data-type" => :json}, defaults: { input_html: { class: 'form-special' } } do |f| %>
-        <%= f.input :name, label: 'Your name please (required)' %>
+      <%= simple_form_for Classmate.new, :validate => false, remote: true, html: {"data-type" => :json}, defaults: { input_html: { class: 'form-special' } } do |f| %>
+        <%= f.input :name, label: 'Your name please (required)', class: "classmate-name" %>
         <%= f.input :githubProfile, label: 'GitHub Page (optional)' %>
         <%= f.input :website, label: 'Personal Website (optional)' %>
         <%= f.label 'Please upload an avatar image' %>

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/DavyJonesLocker/client_side_validations.git
-  revision: c96871aaa8ba63d72e44d7046390b05e42611ef1
+  revision: f388e15b4a93902d880aec3448b61019b66f5a7f
   specs:
     client_side_validations (4.2.0)
       jquery-rails (>= 3.1.2, < 5.0.0)
