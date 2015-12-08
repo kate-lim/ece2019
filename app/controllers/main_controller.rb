@@ -10,19 +10,43 @@ class MainController < ApplicationController
 	end
 
 	def feedback_email
-		emails = ['katelim604@gmail.com', 'bilalmajeed247@gmail.com']
+		success = true
+		selector = Array.new
+		message = ""
 
-		data = {
-			"name" 	=> params[:name_to],
-			"email"	=> params[:email_to],
-			"feedback" => params[:feedback_content]
-		}
-
-		emails.each do |email_to|
-			FeedbackMailer.feedback(data, email_to).deliver
+		name_to = params[:name_to].split(' ')
+		if(name_to.length < 2) 
+			success = false
+			selector.push("name-to")
 		end
 
-		render :nothing => true
+		email_to = params[:email_to].split('@')
+		if ( (email_to.length < 2) || (!email_to[1].include? ".") )
+			success = false
+			selector.push("email-to")
+		end
+
+		feedback_content = params[:feedback_content]
+		if(feedback_content.length < 30) 
+			success = false
+			selector.push("feedback-content")
+		end
+		
+		if success
+			emails = ['katelim604@gmail.com', 'bilalmajeed247@gmail.com']
+			data = {
+				"name" 	=> params[:name_to],
+				"email"	=> params[:email_to],
+				"feedback" => params[:feedback_content]
+			}
+
+			emails.each do |email_to|
+				FeedbackMailer.feedback(data, email_to).deliver
+			end
+			success = true
+		end
+
+		render :json => { :success => success, :selector => selector}
 	end
 
 	def info

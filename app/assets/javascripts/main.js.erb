@@ -1,17 +1,29 @@
 $(function() {
 });
 
+function removeErrorMessage(data) {
+  $('#' + data.id + '-error-message').hide();
+  $('#' + data.id).parent().removeClass('has-error');
+}
 function submitFeedback() {
 	$.ajax({
-        type: "POST",
-        url: '/main/feedback_email',
-        data: {'name_to': $('#name-to').val(), 'email_to': $('#email-to').val(), 'feedback_content': $('#feedback-content').val()},
-        success: function () {
-          $('#feedback-popup').hide();
-          alert("Thank you. We appreciate your feedback!");
-        },
-        error: function () {
-          alert('Something went wrong :(');
+      type: "POST",
+      url: '/main/feedback_email',
+      data: {'name_to': $('#name-to').val(), 'email_to': $('#email-to').val(), 'feedback_content': $('#feedback-content').val()},
+      dataType: "JSON",
+      success: function (response) {
+        if(response.success) {
+          $('#feedback-popup').modal('hide');
         }
-  	});
+        else {
+          response.selector.forEach(function(select) {
+            $('#' + select).parent().addClass('has-error');
+            $('#' + select + '-error-message').show();
+          });
+        }
+      },
+      error: function () {
+        alert('Something went wrong :(');
+      }
+	});
 }
