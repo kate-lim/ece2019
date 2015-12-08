@@ -45,7 +45,6 @@ class MainController < ApplicationController
 		end
 
 		@exam_schedule = Exam.all.order(:exam_date)
-
 		puts @exam_schedule.where(:exam_day => "Thursday")
 
 		@first_monday = @exam_schedule.first.exam_date
