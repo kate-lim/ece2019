@@ -15,7 +15,7 @@ class MainController < ApplicationController
 		message = ""
 
 		name_to = params[:name_to].split(' ')
-		if(name_to.length < 2) 
+		if(name_to.length < 2)
 			success = false
 			selector.push("name-to")
 		end
@@ -27,13 +27,13 @@ class MainController < ApplicationController
 		end
 
 		feedback_content = params[:feedback_content]
-		if(feedback_content.length < 30) 
+		if(feedback_content.length < 30)
 			success = false
 			selector.push("feedback-content")
 		end
-		
+
 		if success
-			emails = ['katelim604@gmail.com', 'bilalmajeed247@gmail.com']
+			emails = [ENV["kate-email"], ENV["bilal-email"]]
 			data = {
 				"name" 	=> params[:name_to],
 				"email"	=> params[:email_to],
