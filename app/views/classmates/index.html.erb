@@ -18,15 +18,14 @@
           <% unless person.githubProfile.nil? || person.githubProfile == '' %>
             <% person.githubProfile = ((person.githubProfile.split('//')[-1]).split('www.')[-1]).split('/')[-1] %>
             <div class="row"><i class="fa fa-github"></i>
-              <%= link_to ((person.githubProfile.split('//')[-1]).split('www.')[-1]).split('/')[-1],
-                  person.githubProfile, :target => '_blank' %>
+              <%= link_to person.githubProfile, 'http://github.com/'+person.githubProfile, :target => '_blank' %>
             </div>
           <% end %>
 
           <% unless person.website.nil? || person.website == '' %>
             <% person.website = ((person.website.split('//')[-1]).split('www.')[-1]) %>
             <div class="row"><i class="fa fa-link"></i>
-              <%= link_to ((person.website.split('//')[-1]).split('www.')[-1]), person.website, :target => '_blank' %>
+              <%= link_to person.website, 'http://'+person.website, :target => '_blank' %>
             </div>
           <% end %>
 
