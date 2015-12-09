@@ -8,13 +8,13 @@ class ClassmatesController < ApplicationController
   end
 
   def create
-    @showNav = true
     @classmate = Classmate.new(params[:classmate])
     @classmate.avatar = params[:file]
 
     name = @classmate.name
     github = @classmate.githubProfile
     site = @classmate.website
+    @classmate.approved = false
 
     respond_to do |format|
       if @classmate.save
