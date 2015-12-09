@@ -54,4 +54,9 @@ class Classmate < ActiveRecord::Base
 		# Sanitize Code
 		write_attribute(:avatar, value)
 	end
+
+	def approved=(value)
+		# Sanitize Code
+		write_attribute(:approved, value)
+	end
 end
