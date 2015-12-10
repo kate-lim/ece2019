@@ -3,7 +3,7 @@ class ClassmatesController < ApplicationController
     @navBarTitle = "Classmates"
     @pageName = "Classmates"
     @showNav = true
-    @classmates = Classmate.all
+    @classmates = Classmate.all.order(:created_at)
     @stick_footer = true
   end
 

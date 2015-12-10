@@ -1,8 +1,8 @@
 class CustomValidator < ActiveModel::Validator
-  def validate(record)
-    if record.name.split(' ').length < 2
-      record.errors[:name] << "Please enter both your first and last name"
-    end
+  	def validate(record)
+	    if record.name.split(' ').length < 2
+	      record.errors[:name] << "Please enter both your first and last name"
+	    end
 	end
 end
 
@@ -17,7 +17,7 @@ class Classmate < ActiveRecord::Base
 
 
 	validates :githubProfile, format: { with: /\A\z|\A(http:\/\/|https:\/\/)?(www.)?github.com(\/)[a-z|0-9]+\z/,
-						message: "Github Page Invalid - must in the form of 'github.com/username"}
+						message: "Github Page Invalid - must in the form of 'github.com/username'"}
 
 	validates :website, format: { with: /\A\z|\A(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?\z/,
 						message: "Website URL Invalid"}
