@@ -15,9 +15,8 @@ class Classmate < ActiveRecord::Base
 	validates :name, uniqueness: { case_sensitive: false, message: "A user by this name is already in our database" }
 	validates :name, format: { with: /\A[a-zA-Z\s]+\z/, message: "Your name can only have letters" }
 
-
-	validates :githubProfile, format: { with: /\A\z|\A(http:\/\/|https:\/\/)?(www.)?github.com(\/)[a-z|0-9]+\z/,
-						message: "Github Page Invalid - must in the form of 'github.com/username'"}
+	validates :githubProfile, format: { with: /\A\z|\A(http:\/\/|https:\/\/)?(www.)?github.com(\/).*\z/,
+						message: "Github Page Invalid - must in the form of 'github.com/username"}
 
 	validates :website, format: { with: /\A\z|\A(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?\z/,
 						message: "Website URL Invalid"}

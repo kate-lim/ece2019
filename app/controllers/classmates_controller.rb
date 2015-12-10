@@ -1,9 +1,8 @@
 class ClassmatesController < ApplicationController
   def index
     @navBarTitle = "Classmates"
-    @pageName = "Classmates"
     @showNav = true
-    @classmates = Classmate.all.order(:created_at)
+    @classmates = Classmate.all.where(:approved => true).order(:created_at)
     @stick_footer = true
   end
 

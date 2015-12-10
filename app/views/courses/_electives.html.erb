@@ -1,9 +1,9 @@
-<h3 data-elective-cat="CSE" class="elective-cat-title"><i class="fa fa-plus"></i> Complementary Studies Electives</h3>
+<h3 data-elective-cat="CSE" class="elective-cat-title enable-hover"><i class="fa fa-plus"></i> Complementary Studies Electives</h3>
 <div class="elective-cat-wrapper collapse" id="CSE">
 	<h5>Two courses from List C and two courses from List A, C, or D</h5>
 
-	<div class="table-header" data-list="listA"><i class="fa fa-chevron-down"></i> List A - Impact Courses</div>
-	<div class="table-responsive collapse" id="listA">
+	<div class="table-header enable-hover" data-list="listA"><i class="fa fa-chevron-down"></i> List A - Impact Courses</div>
+	<div class="table-responsive collapse enable-hover" id="listA">
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
 			<tr colspan="100%">
@@ -19,10 +19,10 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="listC"><i class="fa fa-chevron-down"></i> List C - Humanities and Social Sciences Courses</div>
+	<div class="table-header enable-hover" data-list="listC"><i class="fa fa-chevron-down"></i> List C - Humanities and Social Sciences Courses</div>
 	<div class="table-responsive collapse" id="listC" >
 		<table class="table table-striped elective-table">
-			<tr><td colspan="100%" style="text-align:center;">1. Pre-scheduled - normally at 11:30 MWF, 7-10 M, or 7-10 T, thereforemostly conflict-free for most Eng. students</td></tr>
+			<tr><td colspan="100%" style="text-align:center;font-weight:normal;" class="no-hover">1. Pre-scheduled - normally at 11:30 MWF, 7-10 M, or 7-10 T, thereforemostly conflict-free for most Eng. students</td></tr>
 			<% @count = 1 %>
 			<tr colspan="100%">
 			<% @cse_electives.each do |elective| %>
@@ -35,7 +35,7 @@
 			<% end %>
 			</tr>
 
-			<tr><td colspan="100%" style="text-align:center;">2. Non Pre-scheduled</td></tr>
+			<tr><td colspan="100%" style="text-align:center;font-weight:normal;" class="no-hover">2. Non Pre-scheduled</td></tr>
 			<% @count = 1 %>
 			<tr colspan="100%">
 			<% @cse_electives.each do |elective| %>
@@ -50,7 +50,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="listD"><i class="fa fa-chevron-down"></i> List D - Other Permissible Complementary Studies Courses</div>
+	<div class="table-header enable-hover" data-list="listD"><i class="fa fa-chevron-down"></i> List D - Other Permissible Complementary Studies Courses</div>
 	<div class="table-responsive collapse" id="listD" >
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -69,11 +69,11 @@
 </div>
 
 
-<h3 data-elective-cat="NSE" class="elective-cat-title"><i class="fa fa-plus"></i> Natural Science Electives</h3>
+<h3 data-elective-cat="NSE" class="elective-cat-title enable-hover"><i class="fa fa-plus"></i> Natural Science Electives</h3>
 <div class="elective-cat-wrapper collapse" id="NSE">
 	<h5>Two courses: at least one from List 1 and at most one from List 2</h5>
 
-	<div class="table-header" data-list="list1"><i class="fa fa-chevron-down"></i> List 1 - Natural Science Intensive Course</div>
+	<div class="table-header enable-hover" data-list="list1"><i class="fa fa-chevron-down"></i> List 1 - Natural Science Intensive Course</div>
 	<div class="table-responsive collapse" id="list1">
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -90,7 +90,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="list2"><i class="fa fa-chevron-down"></i> List 2 - Natural Science Courses</div>
+	<div class="table-header enable-hover" data-list="list2"><i class="fa fa-chevron-down"></i> List 2 - Natural Science Courses</div>
 	<div class="table-responsive collapse" id="list2" >
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -108,12 +108,12 @@
 	</div>
 </div>
 
-<h3 data-elective-cat="TE" class="elective-cat-title"><i class="fa fa-plus"></i> Technical Electives</h3>
+<h3 data-elective-cat="TE" class="elective-cat-title enable-hover"><i class="fa fa-plus"></i> Technical Electives</h3>
 <div class="elective-cat-wrapper collapse" id="TE">
 	<h5>Five courses: at least two courses must be chosen from ECE 406-493 or 499. Up to two TEs may be technical courses from other programs;
 			such courses must have sufficiently advanced technical content to be allowed</h5>
 
-	<div class="table-header" data-list="list4A"><i class="fa fa-chevron-down"></i> 4A - Normally offered for the spring term</div>
+	<div class="table-header enable-hover" data-list="list4A"><i class="fa fa-chevron-down"></i> 4A - Normally offered for the spring term</div>
 	<div class="table-responsive collapse" id="list4A">
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -130,7 +130,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="list4B"><i class="fa fa-chevron-down"></i> 4B - Normally offered for the winter term</div>
+	<div class="table-header enable-hover" data-list="list4B"><i class="fa fa-chevron-down"></i> 4B - Normally offered for the winter term</div>
 	<div class="table-responsive collapse" id="list4B" >
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -147,7 +147,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="listDesignProj"><i class="fa fa-chevron-down"></i> Fourth Year Design Project - Offered every term. Students may take it at most once.</div>
+	<div class="table-header enable-hover" data-list="listDesignProj"><i class="fa fa-chevron-down"></i> Fourth Year Design Project - Offered every term. Students may take it at most once.</div>
 	<div class="table-responsive collapse" id="listDesignProj" >
 		<table class="table table-striped elective-table">
 			<tr colspan="100%">
@@ -161,7 +161,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="listCE"><i class="fa fa-chevron-down"></i> Core Electrical Engineering Courses - Students of Computer Entineering may use at most two courses</div>
+	<div class="table-header enable-hover" data-list="listCE"><i class="fa fa-chevron-down"></i> Core Electrical Engineering Courses - Students of Computer Entineering may use at most two courses</div>
 	<div class="table-responsive collapse" id="listCE" >
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>
@@ -178,7 +178,7 @@
 		</table>
 	</div>
 
-	<div class="table-header" data-list="listEE"><i class="fa fa-chevron-down"></i> Core Computer Engineering Courses - Students of Electrical Entineering may use at most two courses</div>
+	<div class="table-header enable-hover" data-list="listEE"><i class="fa fa-chevron-down"></i> Core Computer Engineering Courses - Students of Electrical Entineering may use at most two courses</div>
 	<div class="table-responsive collapse" id="listEE" >
 		<table class="table table-striped elective-table">
 			<% @count = 1 %>

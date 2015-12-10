@@ -1,11 +1,11 @@
 <div class="wrapper">
 	<div class="container">
 		<div class="col-sm-12" id="exam-container">
-			<h2>2A Final Exam Schedule</h2>
+			<h3>2A FINAL EXAMS - <%= @month_string.upcase %></h3>
 			<table id="exam-table" style="width:96%">
 				<tr>
 					<% @days_in_week.each do |day| %>
-						<th style="width:16%"><%= day %></th>
+						<th class="calendar-day"><%= day %></th>
 					<% end %>
 				</tr>
 				<% day_count = @first_monday %>
@@ -19,10 +19,10 @@
 										<b><%= @first_monday.day %></b>
 									</div>
 									<% today_exams.each do |today| %>
-										<div class="col-sm-12 calendar-cell">Section: <%= today.section %></div>
-										<div class="col-sm-12 calendar-cell"><%= today.course %></div>
-										<div class="col-sm-12 calendar-cell"><%= today.start_time %> - <%= today.end_time %></div>
-										<div class="col-sm-12 calendar-cell"><%= today.location %></div>
+										<div class="col-sm-12 calendar-cell" style="font-weight:bold;">Section: <%= today.section %></div>
+										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.course %></div>
+										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.start_time %> - <%= today.end_time %></div>
+										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.location %></div>
 									<% end %>
 								<% else %>
 									<div class="col-sm-12 calendar-date calendar-cell">
@@ -39,9 +39,9 @@
 			</table>
 		</div>
 		<div class="col-sm-12" id="article-container">
-			<h2>uWaterloo Articles</h2>
+			<h3>UW ARTICLES</h3>
 			<div class="col-sm-12" id="eng-news">
-				<h3>Engineering</h3>
+				<h4>Engineering</h4>
 				<% @eng_news.each do |article| %>
 					<div class="col-sm-12 article">
 						<%= link_to article.title, article.url, :target => '_blank' %>
@@ -49,7 +49,7 @@
 				<% end %>
 			</div>
 			<div class="col-sm-12" id="general-news">
-				<h3>General</h3>
+				<h4>General</h4>
 				<% @general_news.each do |article| %>
 					<div class="col-sm-12 article">
 						<%= link_to article.title, article.url, :target => '_blank' %>

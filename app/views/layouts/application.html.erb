@@ -46,17 +46,9 @@
 	    <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="/home">Home</a></li>
-
-	        <% if @pageName == 'Courses'%>
-	        	<li><a href="/classmates">Classmates</a></li>
-	        	<li><a href="/info">Information</a></li>
-	        <% elsif @pageName == 'Classmates'%>
-	        	<li><a href="/courses">Courses</a></li>
-	        	<li><a href="/info">Information</a></li>
-	        <% elsif @pageName == 'Information'%>
-	        	<li><a href="/courses">Courses</a></li>
-	        	<li><a href="/classmates">Classmates</a></li>
-	        <% end %>
+	        <li><a href="/courses">Courses</a></li>
+        	<li><a href="/classmates">Classmates</a></li>
+        	<li><a href="/info">Information</a></li>
 	      </ul>
 	    </div>
 	  </div>

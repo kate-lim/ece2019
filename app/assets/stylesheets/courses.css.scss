@@ -85,6 +85,11 @@ p {
 	}
 }
 
+.enable-hover:hover {
+	cursor: pointer !important;
+	color: black;
+}
+
 .no-hover:hover {
 	cursor: context-menu !important;
 	font-weight: normal !important;
@@ -92,4 +97,12 @@ p {
 
 textarea{
 	resize: vertical;
+}
+
+.table-header {
+	margin: 0 !important;
+}
+
+.elective-note {
+	padding-left: 2em;
 }

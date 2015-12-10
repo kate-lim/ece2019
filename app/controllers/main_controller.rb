@@ -1,4 +1,5 @@
 require 'uwaterlooapi'
+require 'date'
 
 class MainController < ApplicationController
 	def index
@@ -51,7 +52,6 @@ class MainController < ApplicationController
 
 	def info
 		@navBarTitle = "Information"
-		@pageName = "Information"
 		@showNav = true
 
 		@general_news = Array.new
@@ -69,7 +69,6 @@ class MainController < ApplicationController
 		end
 
 		@exam_schedule = Exam.all.order(:exam_date)
-		puts @exam_schedule.where(:exam_day => "Thursday")
 
 		@first_monday = @exam_schedule.first.exam_date
 		while @first_monday.monday? == false do
@@ -81,8 +80,13 @@ class MainController < ApplicationController
 		   @last_friday += 1
 		end
 
-		puts @first_monday
-		puts @last_friday
+		if @first_monday.month == @last_friday.month
+			@month_string = Date::MONTHNAMES[@first_monday.month]
+		else
+			@month_string = Date::MONTHNAMES[@first_monday.month] + " / " + Date::MONTHNAMES[@last_friday.month]
+		end
+
+		
 
 		@days_in_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	end

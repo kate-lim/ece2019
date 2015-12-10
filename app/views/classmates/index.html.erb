@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="container">
     <div class="row"><% @classmates.each do |person| %>
-      <% break if person.approved.to_s == "false" %>
       <% avatar_img = person.avatar.url %>
       <div class="col-md-2 col-sm-3 col-xs-4 profile">
 
@@ -35,15 +34,6 @@
   </div>
 </div>
 
-<footer class="home-footer">
-  <div class="container">
-    <p class="text-muted">
-      Copyright &copy; 2015 &nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
-      <a data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add yourself to this page!</a>
-    </p>
-  </div>
-</footer>
-
 <div class="modal fade" id="new-classmate-modal" role="dialog" aria-labelledby="AddClassmate">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -71,3 +61,12 @@
     </div>
   </div>
 </div>
+
+<footer class="home-footer">
+  <div class="container">
+    <p class="text-muted">
+      Copyright &copy; 2015 &nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
+      <a data-toggle="modal" data-toggle="modal" data-target="#new-classmate-modal">Add yourself to this page!</a>
+    </p>
+  </div>
+</footer>

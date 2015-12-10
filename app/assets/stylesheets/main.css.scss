@@ -61,8 +61,8 @@ hr {
 }
 
 .calendar-date {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid #606060;
+  border-top: 1px solid #606060;
   margin-top: 0.5em;
   margin-right: 0.5em;
 }
@@ -88,4 +88,9 @@ hr {
 .error-message {
   color: red;
   display: none;
+}
+
+.calendar-day {
+  color: #606060;  
+  width: 16%;
 }

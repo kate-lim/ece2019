@@ -1,7 +1,6 @@
 class CoursesController < ApplicationController
 	def courses
 		@showNav = true
-		@pageName = "Courses"
 		@navBarTitle = "ECE Courses"
 
 		@terms = Course.uniq.pluck(:term).sort! {|x, y| x <=> y}
