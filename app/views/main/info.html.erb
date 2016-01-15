@@ -1,61 +1,79 @@
 <div class="wrapper">
 	<div class="container">
-		<div class="col-sm-12" id="exam-container">
-			<h3>2A FINAL EXAMS - <%= @month_string.upcase %></h3>
-			<table id="exam-table" style="width:96%">
-				<tr>
-					<% @days_in_week.each do |day| %>
-						<th class="calendar-day"><%= day %></th>
-					<% end %>
-				</tr>
-				<% day_count = @first_monday %>
-				<% while day_count + 4 <= @last_friday%>
-					<tr style="height:50px">
+		<div class="col-sm-12" id="exam-container" style="display:none;">
+			<% if @exam_schedule.blank? %>
+				<h3>NO FINAL EXAMS AT THIS TIME</h3>
+			<% else %>
+				<h3>2A FINAL EXAMS - <%= @month_string.upcase %></h3>
+				<table id="exam-table" style="width:96%">
+					<tr>
 						<% @days_in_week.each do |day| %>
-							<td style="width:16%;vertical-align:top;">
-								<% today_exams = @exam_schedule.where(:exam_date => @first_monday) %>
-								<% if today_exams.any? %>
-									<div class="col-sm-12 calendar-date calendar-cell">
-										<b><%= @first_monday.day %></b>
-									</div>
-									<% today_exams.each do |today| %>
-										<div class="col-sm-12 calendar-cell" style="font-weight:bold;">Section: <%= today.section %></div>
-										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.course %></div>
-										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.start_time %> - <%= today.end_time %></div>
-										<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.location %></div>
-									<% end %>
-								<% else %>
-									<div class="col-sm-12 calendar-date calendar-cell">
-										<%= @first_monday.day %>
-									</div>
-								<% end %>
-							</td>
-							<% @first_monday += 1 %>
+							<th class="calendar-day"><%= day %></th>
 						<% end %>
 					</tr>
-					<% @first_monday += 1 %>
 					<% day_count = @first_monday %>
-				<% end %>
-			</table>
+					<% while day_count + 4 <= @last_friday%>
+						<tr style="height:50px">
+							<% @days_in_week.each do |day| %>
+								<td style="width:16%;vertical-align:top;">
+									<% today_exams = @exam_schedule.where(:exam_date => @first_monday) %>
+									<% if today_exams.any? %>
+										<div class="col-sm-12 calendar-date calendar-cell">
+											<b><%= @first_monday.day %></b>
+										</div>
+										<% today_exams.each do |today| %>
+											<div class="col-sm-12 calendar-cell" style="font-weight:bold;">Section: <%= today.section %></div>
+											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.course %></div>
+											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.start_time %> - <%= today.end_time %></div>
+											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.location %></div>
+										<% end %>
+									<% else %>
+										<div class="col-sm-12 calendar-date calendar-cell">
+											<%= @first_monday.day %>
+										</div>
+									<% end %>
+								</td>
+								<% @first_monday += 1 %>
+							<% end %>
+						</tr>
+						<% @first_monday += 1 %>
+						<% day_count = @first_monday %>
+					<% end %>
+				</table>
+			<% end %>
 		</div>
 		<div class="col-sm-12" id="article-container">
 			<h3>UW ARTICLES</h3>
-			<div class="col-sm-12" id="eng-news">
-				<h4>Engineering</h4>
-				<% @eng_news.each do |article| %>
-					<div class="col-sm-12 article">
-						<%= link_to article.title, article.url, :target => '_blank' %>
-					</div>
-				<% end %>
-			</div>
-			<div class="col-sm-12" id="general-news">
-				<h4>General</h4>
-				<% @general_news.each do |article| %>
-					<div class="col-sm-12 article">
-						<%= link_to article.title, article.url, :target => '_blank' %>
-					</div>
-				<% end %>
-			</div>
+			<% if !@eng_news.empty? %>
+				<div class="col-sm-12" id="eng-news">
+					<h4>Engineering</h4>
+					<% @eng_news.each do |article| %>
+						<div class="col-sm-12 article">
+							<%= link_to article.title, article.url, :target => '_blank' %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+			<% if !@general_news.empty? %>
+				<div class="col-sm-12" id="general-news">
+					<h4>General</h4>
+					<% @general_news.each do |article| %>
+						<div class="col-sm-12 article">
+							<%= link_to article.title, article.url, :target => '_blank' %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+			<% if !@sys_news.empty? %>
+				<div class="col-sm-12" id="sys-news">
+					<h4>Systems Technology</h4>
+					<% @sys_news.each do |article| %>
+						<div class="col-sm-12 article">
+							<%= link_to article.title, article.url, :target => '_blank' %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>

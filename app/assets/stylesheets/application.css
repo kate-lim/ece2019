@@ -56,6 +56,9 @@ a {
   padding-top: 1em;
   text-align: center;
   font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer a {
@@ -65,6 +68,7 @@ a {
 .footer a:hover {
   color: black;
 }
+
 
 .modal {
   font-family: 'Lato', sans-serif !important;
