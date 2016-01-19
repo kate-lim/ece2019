@@ -1,1 +1,2 @@
-Hello
+Website displaying important information about the ECE program
+http://www.ece2019.com/
