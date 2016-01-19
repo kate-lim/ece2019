@@ -1,3 +1,1 @@
-Website displaying important information about the ECE program
-<br/>
 http://www.ece2019.com
