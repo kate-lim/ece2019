@@ -24,3 +24,18 @@ function submitFeedback() {
       }
 	});
 }
+
+function formatFooter() {
+  var width = $(window).width();
+  if( width > 500)
+    $('.footer-message').css('display', '');
+  else
+    $('.footer-message').css('display', 'block');
+}
+
+$(function() {
+  formatFooter();
+  $(window).resize(function() {
+    formatFooter();
+  });
+})

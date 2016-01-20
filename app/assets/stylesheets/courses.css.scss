@@ -23,7 +23,7 @@
 }
 
 .table {
-	margin-top: 20px;
+	margin: 2em 0;
 
 	td {
 		color: #606060;
@@ -75,12 +75,11 @@ p {
 		font-family: 'Lato', sans-serif;
 		font-weight: 300;
 		text-transform: uppercase;
-	text-align: left;
-
-	i {
-		color: #606060;
-			vertical-align: middle;
-			font-size: 60% !important;
+		text-align: left;
+		i {
+			color: #606060;
+				vertical-align: middle;
+				font-size: 60% !important;
 		}
 	}
 }

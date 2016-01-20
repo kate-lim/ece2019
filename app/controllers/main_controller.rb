@@ -3,7 +3,7 @@ require 'date'
 
 class MainController < ApplicationController
 	def index
-		@stick_footer = true
+		@navBarTitle = "Home"
 	end
 
 	def feedback_popup
