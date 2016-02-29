@@ -68,6 +68,8 @@ a {
   padding: 0 1em;
   text-align: center;
   font-size: 12px;
+  clear: both;
+  margin: 0 auto;
 }
 
 .footer a {
