@@ -15,6 +15,15 @@ hr {
     font-size: 4.5em;
     font-weight: 700;
   }
+
+  #class-logo {
+    width: 150px;
+    height: auto; 
+  }
+
+  @media only screen and (min-width: 500px) {
+     #class-logo { width: 300px; }
+  }
 }
 
 /*Homepage Header and Blog Header*/
@@ -47,14 +56,19 @@ hr {
   }
 }
 
-.header-button{
+.header-button {
   font-weight: 400;
   border-radius: 0;
   border-width: 2px;
   color: black;
   background-color: #F0F0F0;
-  margin: 0px 5px;
+  margin: 2px 25%;
   font-weight: 300;
+  width: 150px;
+}
+
+@media only screen and (min-width: 700px) {
+   .header-button { margin: 0px 5px; }
 }
 
 .article {

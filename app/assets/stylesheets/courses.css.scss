@@ -41,12 +41,10 @@
 }
 
 .elective-table{
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
 
 	td:nth-child(2n+2) {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 600;
 		color: #0073a8;
 		width: 25%;
 	}
@@ -57,7 +55,7 @@
 
 .table-header{
 	color: #606060;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-weight: 600;
 	@extend .h4;
 	text-align: center;
