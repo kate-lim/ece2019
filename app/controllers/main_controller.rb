@@ -89,6 +89,8 @@ class MainController < ApplicationController
 
 			@days_in_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 		end
+
+		@current = Term.where(start_date: (Date.new(2000,1,1)..Date.today), end_date: (Date.today..Date.new(9999,1,1)), :is_coop => false).first.term
 	end
 
 end

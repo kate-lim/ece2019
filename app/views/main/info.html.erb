@@ -4,7 +4,7 @@
 			<% if @exam_schedule.blank? %>
 				<h3>NO FINAL EXAMS AT THIS TIME</h3>
 			<% else %>
-				<h3>2A FINAL EXAMS - <%= @month_string.upcase %></h3>
+				<h3><% @current %> FINAL EXAMS - <%= @month_string.upcase %></h3>
 				<table id="exam-table" style="width:96%">
 					<tr>
 						<% @days_in_week.each do |day| %>
@@ -22,10 +22,10 @@
 											<b><%= @first_monday.day %></b>
 										</div>
 										<% today_exams.each do |today| %>
-											<div class="col-sm-12 calendar-cell" style="font-weight:bold;">Section: <%= today.section %></div>
 											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.course %></div>
-											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.start_time %> - <%= today.end_time %></div>
-											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.location %></div>
+											<div class="col-sm-12 calendar-cell">Section: <%= today.section %></div>
+											<div class="col-sm-12 calendar-cell"><%= today.start_time %> - <%= today.end_time %></div>
+											<div class="col-sm-12 calendar-cell" style="border-bottom: 1px dotted black"><%= today.location %></div>
 										<% end %>
 									<% else %>
 										<div class="col-sm-12 calendar-date calendar-cell">

@@ -16,6 +16,8 @@ class CoursesController < ApplicationController
 			@courses.push(course_info)
 		end
 
+		@current = Term.where(start_date: (Date.new(2000,1,1)..Date.today), end_date: (Date.today..Date.new(9999,1,1)), :is_coop => false).first.term
+
 		load_electives
 	end
 
@@ -30,7 +32,7 @@ class CoursesController < ApplicationController
 		@nse_electives = Array.new
 		@te_electives = Array.new
 
-		Elective.all.order(:number, :notes, :elective_type, :list, :subject).each do |elective|
+		Elective.all.order(:subject, :number, :notes, :elective_type, :list).each do |elective|
 			if elective.number == '*'
 				elective.title = "Click for more information"
 			end
@@ -60,7 +62,7 @@ class CoursesController < ApplicationController
 		if(selected.elective_type == "NSE" && selected.list == "1" && selected.lab == true)
 			display_code = display_code + "/" + display_code + "L"
 		end
-		puts display_code
+		
 		@elective_info = {
 			"code" 			=> display_code,
 			"type"			=> selected.elective_type,

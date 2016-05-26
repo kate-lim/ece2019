@@ -72,7 +72,6 @@ Course.create!([
 	{subject: 'Elective', 	number: '999',	term: '4B',		major: 'ZZ'}
 ])
 
-
 Elective.delete_all
 Elective.create!([
 	{elective_type: 'CSE',	list: 'A',		subject: 'ECE',		number: '390'},
