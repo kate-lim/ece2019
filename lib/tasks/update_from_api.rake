@@ -29,7 +29,7 @@ namespace :update_from_api do
 	desc "Update exam information"
 	task :update_exam_info => :environment do
 		Exam.delete_all
-		courses_this_term = Course.where(:term => '2A').where.not(:subject => 'Elective')
+		courses_this_term = Course.where(:term => '2B').where.not(:subject => 'Elective')
 
 		courses_this_term.each do |course|
 			schedule = Exam.new.save_new_exam_info(course.subject, course.number)

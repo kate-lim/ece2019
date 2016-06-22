@@ -15,17 +15,17 @@
 					<% while day_count + 4 <= @last_friday%>
 						<tr style="height:50px">
 							<% @days_in_week.each do |day| %>
-								<td style="width:16%;vertical-align:top;">
-									<% today_exams = @exam_schedule.where(:exam_date => @first_monday) %>
+								<td class="calender-td"style="width:16%;vertical-align:top;">
+									<% today_exams = @exam_schedule.select{ |e| e.exam_date == @first_monday } %>
 									<% if today_exams.any? %>
 										<div class="col-sm-12 calendar-date calendar-cell">
 											<b><%= @first_monday.day %></b>
 										</div>
 										<% today_exams.each do |today| %>
-											<div class="col-sm-12 calendar-cell" style="font-weight:bold;"><%= today.course %></div>
+											<div class="col-sm-12 calendar-cell calendar-cell-border"><%= today.course %></div>
 											<div class="col-sm-12 calendar-cell">Section: <%= today.section %></div>
 											<div class="col-sm-12 calendar-cell"><%= today.start_time %> - <%= today.end_time %></div>
-											<div class="col-sm-12 calendar-cell" style="border-bottom: 1px dotted black"><%= today.location %></div>
+											<div class="col-sm-12 calendar-cell"><%= today.location %></div>
 										<% end %>
 									<% else %>
 										<div class="col-sm-12 calendar-date calendar-cell">

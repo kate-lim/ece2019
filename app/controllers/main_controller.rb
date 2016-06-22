@@ -68,9 +68,9 @@ class MainController < ApplicationController
 			end
 		end
 
-		@exam_schedule = Exam.all.order(:exam_date)
-
-		if !@exam_schedule.blank? 
+		@exam_schedule = Exam.all.sort_by{ |e| [e.exam_date, e.start_time.to_datetime] }
+		
+		if !@exam_schedule.blank?
 			@first_monday = @exam_schedule.first.exam_date
 			while @first_monday.monday? == false do
 			   @first_monday -= 1
@@ -84,13 +84,16 @@ class MainController < ApplicationController
 			if @first_monday.month == @last_friday.month
 				@month_string = Date::MONTHNAMES[@first_monday.month]
 			else
-				@month_string = Date::MONTHNAMES[@first_monday.month] + " / " + Date::MONTHNAMES[@last_friday.month]
+				@month_string = Date::MONTHNAMES[@first_monday.month] + " / "
+				+ Date::MONTHNAMES[@last_friday.month]
 			end
 
-			@days_in_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+			@days_in_week = ["Monday", "Tuesday", "Wednesday",
+				"Thursday", "Friday", "Saturday"]
 		end
 
-		@current = Term.where(start_date: (Date.new(2000,1,1)..Date.today), end_date: (Date.today..Date.new(9999,1,1)), :is_coop => false).first.term
+		@current = Term.where(start_date: (Date.new(2000,1,1)..Date.today),
+		end_date: (Date.today..Date.new(9999,1,1)), :is_coop => false).first.term
 	end
 
 end
